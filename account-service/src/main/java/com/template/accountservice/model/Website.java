@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Website {
+public class Website extends BaseEntity {
     @Id
     public UUID id;
     /*

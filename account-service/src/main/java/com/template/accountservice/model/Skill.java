@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Skill {
+public class Skill extends BaseEntity {
 
     @Id
     public String id;

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class VolunteeringInterest {
+public class VolunteeringInterest extends BaseEntity {
     @Id
     public UUID id;
     public String supportedNonprofits;

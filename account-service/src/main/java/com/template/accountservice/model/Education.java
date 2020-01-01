@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Education {
+public class Education extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

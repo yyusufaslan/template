@@ -45,33 +45,38 @@
             </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="ear-subdeployments-isolated" type="xsd:boolean" minOccurs="0" maxOccurs="1" >
+            <xsd:element name="ear-subdeployments-isolated" type="xsd:boolean" minOccurs="0" maxOccurs="1">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
-                    Flag indicating whether each of the subdeployments within a .ear can access classes belonging to
-                    another subdeployment within the same .ear. Setting this to false, allows the subdeployments to
-                    see classes belonging to other subdeployments within the .ear.
-                    For example:
-                    myapp.ear
-                     |
-                     |--- web.war
-                     |
-                     |--- ejb1.jar
-                     |
-                     |--- ejb2.jar
+                        Flag indicating whether each of the subdeployments within a .ear can access classes belonging to
+                        another subdeployment within the same .ear. Setting this to false, allows the subdeployments to
+                        see classes belonging to other subdeployments within the .ear.
+                        For example:
+                        myapp.ear
+                        |
+                        |--- web.war
+                        |
+                        |--- ejb1.jar
+                        |
+                        |--- ejb2.jar
 
-                    If the ear-subdeployments-isolated is set to false, then the classes in web.war can access classes
-                    belonging to ejb1.jar and ejb2.jar. Similarly, classes from ejb1.jar can access classes from ejb2.jar
-                    (and vice-versa).
+                        If the ear-subdeployments-isolated is set to false, then the classes in web.war can access
+                        classes
+                        belonging to ejb1.jar and ejb2.jar. Similarly, classes from ejb1.jar can access classes from
+                        ejb2.jar
+                        (and vice-versa).
 
-                    *Note that this flag, has no effect on the isolated classloader of the .war file(s). i.e. irrespective
-                    of whether this flag is set to true or false, the .war within a .ear will have a isolated classloader
-                    and other subdeployments within that .ear will not be able to access classes from that .war. This is
-                    as per spec*
+                        *Note that this flag, has no effect on the isolated classloader of the .war file(s). i.e.
+                        irrespective
+                        of whether this flag is set to true or false, the .war within a .ear will have a isolated
+                        classloader
+                        and other subdeployments within that .ear will not be able to access classes from that .war.
+                        This is
+                        as per spec*
                     </documentation>
                 </annotation>
             </xsd:element>
-            <xsd:element name="deployment" type="deploymentType" minOccurs="0" maxOccurs="1" >
+            <xsd:element name="deployment" type="deploymentType" minOccurs="0" maxOccurs="1">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         Element that corresponds to a deployment. This is used to customise
@@ -79,7 +84,7 @@
                     </documentation>
                 </annotation>
             </xsd:element>
-            <xsd:element name="sub-deployment" type="subDeploymentType" minOccurs="0" maxOccurs="unbounded" >
+            <xsd:element name="sub-deployment" type="subDeploymentType" minOccurs="0" maxOccurs="unbounded">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         Element that corresponds to a deployment. This is used to customise
@@ -87,7 +92,7 @@
                     </documentation>
                 </annotation>
             </xsd:element>
-            <xsd:element name="module" type="moduleType" minOccurs="0" maxOccurs="unbounded" >
+            <xsd:element name="module" type="moduleType" minOccurs="0" maxOccurs="unbounded">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         Additional module declaration. This can be used to create additional modules
@@ -150,8 +155,8 @@
         <xsd:complexContent>
             <xsd:extension base="deploymentType">
                 <xsd:attribute name="name" type="xsd:string" use="required">
-                   <annotation xmlns="http://www.w3.org/2001/XMLSchema">
-                      <documentation>
+                    <annotation xmlns="http://www.w3.org/2001/XMLSchema">
+                        <documentation>
                             The deployment name.
                         </documentation>
                     </annotation>
@@ -212,12 +217,14 @@
         <annotation xmlns="http://www.w3.org/2001/XMLSchema">
             <documentation>
                 A module name, which consists of one or more dot (.)-separated segments. Each segment must begin and end
-                with an alphanumeric or underscore (_), and may otherwise contain alphanumerics, underscores, and hyphens
+                with an alphanumeric or underscore (_), and may otherwise contain alphanumerics, underscores, and
+                hyphens
                 (-).
             </documentation>
         </annotation>
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[a-zA-Z0-9_]([-a-zA-Z0-9_]*[a-zA-Z0-9_])?(\.[a-zA-Z0-9_]([-a-zA-Z0-9_]*[a-zA-Z0-9_])?)*"/>
+            <xsd:pattern
+                    value="[a-zA-Z0-9_]([-a-zA-Z0-9_]*[a-zA-Z0-9_])?(\.[a-zA-Z0-9_]([-a-zA-Z0-9_]*[a-zA-Z0-9_])?)*"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -297,7 +304,7 @@
                 <documentation>
                     Specifies whether this module dependency is re-exported by default (default is "false"). Setting
                     this attribute to true sets the default action for the export filter list to "accept"; leaving it
-                    as false sets the default action to "reject".  Thus you can still export dependency resources even
+                    as false sets the default action to "reject". Thus you can still export dependency resources even
                     if this attribute is false by listing explicit paths for the export list.
                 </documentation>
             </annotation>
@@ -307,7 +314,7 @@
                 <documentation>
                     Specifies whether and how services found in this dependency are used (default is "none"). Specifying
                     a value of "import" for this attribute is equivalent to adding a filter at the end of the import
-                    filter list which includes the META-INF/services path from the dependency module.  Setting a value
+                    filter list which includes the META-INF/services path from the dependency module. Setting a value
                     of "export" for this attribute is equivalent to the same action on the export filter list.
                 </documentation>
             </annotation>
@@ -450,7 +457,8 @@
             <xsd:element name="filter" type="filterType" minOccurs="0">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
-                        A path filter specification for this resource root (optional). By default all paths are accepted.
+                        A path filter specification for this resource root (optional). By default all paths are
+                        accepted.
                     </documentation>
                 </annotation>
             </xsd:element>
@@ -553,7 +561,7 @@
         </annotation>
         <xsd:choice minOccurs="0" maxOccurs="unbounded">
             <xsd:element name="transformer" type="transformerType">
-                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
+                <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         The transformer class to include in the set.
                     </documentation>
@@ -569,7 +577,7 @@
             </documentation>
         </annotation>
         <xsd:attribute name="class" type="xsd:string" use="required">
-           <annotation xmlns="http://www.w3.org/2001/XMLSchema">
+            <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                 <documentation>
                     The class name of the transformer
                 </documentation>

@@ -48,23 +48,31 @@
 
     <xsd:complexType name="samlType">
         <xsd:annotation>
-            <xsd:documentation>Defines the SAML type. This type defines all configurations about how SAML assertions are processed and created.</xsd:documentation>
+            <xsd:documentation>Defines the SAML type. This type defines all configurations about how SAML assertions are
+                processed and created.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="clock-skew" type="xsd:int" use="optional" default="0">
             <xsd:annotation>
-                <xsd:documentation>Defines the clock skew for SAML assertions. The value must be specified in milliseconds.</xsd:documentation>
+                <xsd:documentation>Defines the clock skew for SAML assertions. The value must be specified in
+                    milliseconds.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="token-timeout" type="xsd:int" use="optional" default="5000">
             <xsd:annotation>
-                <xsd:documentation>Defines the timeout for SAML assertions. The value must be specified in milliseconds.</xsd:documentation>
+                <xsd:documentation>Defines the timeout for SAML assertions. The value must be specified in
+                    milliseconds.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
 
     <xsd:complexType name="roleGeneratorType">
         <xsd:annotation>
-            <xsd:documentation>The RoleGenerator implementation that will be used to load roles and push them to SAML assertions.</xsd:documentation>
+            <xsd:documentation>The RoleGenerator implementation that will be used to load roles and push them to SAML
+                assertions.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
@@ -90,7 +98,9 @@
 
     <xsd:complexType name="attributeManagerType">
         <xsd:annotation>
-            <xsd:documentation>The AttributeManager implementation that will be used to load roles and push them to SAML assertions.</xsd:documentation>
+            <xsd:documentation>The AttributeManager implementation that will be used to load roles and push them to SAML
+                assertions.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
@@ -116,7 +126,8 @@
 
     <xsd:complexType name="keyStoreType">
         <xsd:annotation>
-            <xsd:documentation>Defines the KeyStore type. This type defines how key stores are configured.</xsd:documentation>
+            <xsd:documentation>Defines the KeyStore type. This type defines how key stores are configured.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="keys" type="keysType" minOccurs="0" maxOccurs="1" nillable="true"/>
@@ -172,7 +183,9 @@
         </xsd:attribute>
         <xsd:attribute name="host" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation>A single or a comma separated list of strings representing the host names validated by the given key.</xsd:documentation>
+                <xsd:documentation>A single or a comma separated list of strings representing the host names validated
+                    by the given key.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
@@ -189,7 +202,9 @@
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation>A unique name for the Identity Provider. The name must be the deployment unit name. Eg.: idp.war.</xsd:documentation>
+                <xsd:documentation>A unique name for the Identity Provider. The name must be the deployment unit name.
+                    Eg.: idp.war.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="url" type="xsd:string" use="required">
@@ -211,13 +226,15 @@
             <xsd:annotation>
                 <xsd:documentation>
                     The name of a security-domain that will be used to authenticate and authorize users.
-                    This attribute is required if the IdP is not external. See the 'external' attribute for more details.
+                    This attribute is required if the IdP is not external. See the 'external' attribute for more
+                    details.
                 </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="strict-post-binding" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
-                <xsd:documentation>Indicates if the the IDP should always respond using HTTP POST binding.</xsd:documentation>
+                <xsd:documentation>Indicates if the the IDP should always respond using HTTP POST binding.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="external" type="xsd:boolean" use="optional" default="false">
@@ -232,7 +249,9 @@
         </xsd:attribute>
         <xsd:attribute name="ssl-authentication" type="xsd:boolean" use="optional" default="false">
             <xsd:annotation>
-                <xsd:documentation>Indicates if the identity provider should also support HTTP CLIENT_CERT authentication.</xsd:documentation>
+                <xsd:documentation>Indicates if the identity provider should also support HTTP CLIENT_CERT
+                    authentication.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
@@ -242,7 +261,8 @@
             <xsd:documentation>Groups Service Provider types.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="service-provider" type="serviceProviderType" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="service-provider" type="serviceProviderType" minOccurs="1" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -315,7 +335,8 @@
             <xsd:documentation>Groups Trusted Domain Types.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="trust-domain" type="trustedDomainType" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="trust-domain" type="trustedDomainType" minOccurs="1" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
     </xsd:complexType>
 

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Locale {
+public class Locale extends BaseEntity {
 
     @Id
     public UUID id;

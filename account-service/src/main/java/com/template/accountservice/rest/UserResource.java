@@ -21,9 +21,26 @@ public class UserResource {
     return userService.getUserById(id);
   }
 
+  @GetMapping(value = "/getActiveUserById")
+  public User getActiveUserById(@PathVariable("userId")UUID id){
+    return userService.getActiveUserById(id);
+  }
+
   @GetMapping(value = "/getActiveUsers")
   public List<User> getActiveUsers(@PathVariable("userId")UUID id){
     return userService.getActiveUsers();
   }
+
+  @PostMapping(value = "/update-user")
+  public User updateUserProfile(User user){
+    return userService.updateUser(user);
+  }
+
+  @PostMapping(value = "/delete-user")
+  public void deleteUser(User user){
+    userService.deleteUser(user.id);
+  }
+
+
 
 }

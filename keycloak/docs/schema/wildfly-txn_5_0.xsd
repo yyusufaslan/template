@@ -51,7 +51,8 @@
                 <xs:element name="use-journal-store" type="use-journal-store-Type" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="jdbc-store" type="jdbc-store-Type" minOccurs="0" maxOccurs="1"/>
             </xs:choice>
-            <xs:element name="commit-markable-resources" type="cmr-resources-Type" minOccurs="0" maxOccurs="1"></xs:element>
+            <xs:element name="commit-markable-resources" type="cmr-resources-Type" minOccurs="0"
+                        maxOccurs="1"></xs:element>
         </xs:sequence>
 
 
@@ -71,8 +72,8 @@
             ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="socket-binding" type="xs:string" />
-        <xs:attribute name="status-socket-binding" type="xs:string" />
+        <xs:attribute name="socket-binding" type="xs:string"/>
+        <xs:attribute name="status-socket-binding" type="xs:string"/>
         <xs:attribute name="recovery-listener" type="xs:boolean" default="false"/>
     </xs:complexType>
 
@@ -88,7 +89,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="process-id" type="process-id" />
+            <xs:element name="process-id" type="process-id"/>
         </xs:all>
         <xs:attribute name="node-identifier" type="xs:string" default="1"/>
     </xs:complexType>
@@ -103,8 +104,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="uuid" type="uuid" />
-            <xs:element name="socket" type="socket-id" />
+            <xs:element name="uuid" type="uuid"/>
+            <xs:element name="socket" type="socket-id"/>
         </xs:choice>
     </xs:complexType>
     <xs:complexType name="uuid">
@@ -127,10 +128,10 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="socket-binding" type="xs:string" use="required"/>
-        <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10" />
+        <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10"/>
     </xs:complexType>
 
-    <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10" />
+    <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10"/>
 
     <xs:complexType name="coordinator-environment">
         <xs:annotation>
@@ -153,8 +154,8 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="enable-tsm-status" type="xs:boolean" default="false"/>
-        <xs:attribute name="default-timeout" type="xs:int" default="300" />
-        <xs:attribute name="maximum-timeout" type="xs:int" default="31536000" />
+        <xs:attribute name="default-timeout" type="xs:int" default="300"/>
+        <xs:attribute name="maximum-timeout" type="xs:int" default="31536000"/>
     </xs:complexType>
 
     <xs:complexType name="object-store">
@@ -261,7 +262,7 @@
                     ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="table-prefix" type="xs:string" use="optional" />
+        <xs:attribute name="table-prefix" type="xs:string" use="optional"/>
         <xs:attribute name="drop-table" type="xs:boolean" use="optional" default="false"/>
     </xs:complexType>
 

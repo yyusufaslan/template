@@ -11,10 +11,10 @@ import java.util.UUID;
 public class IM {
 
 
-    @Id
-    public UUID id;
-    //required
-    public String provider;
+  @Id
+  public UUID id;
+  //required
+  public String provider;
 
 
 }

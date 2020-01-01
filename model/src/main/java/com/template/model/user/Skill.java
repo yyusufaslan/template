@@ -9,8 +9,8 @@ import javax.persistence.Id;
 @Data
 public class Skill {
 
-    @Id
-    public String id;
-    //required localizable skill name as defined by the member.
-    public String name;
+  @Id
+  public String id;
+  //required localizable skill name as defined by the member.
+  public String name;
 }

@@ -34,7 +34,8 @@
             <xsd:documentation>Defines the Partition Manager type.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="identity-configuration" type="identityConfigurationType" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="identity-configuration" type="identityConfigurationType" minOccurs="1"
+                         maxOccurs="unbounded" nillable="false"/>
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
@@ -70,7 +71,8 @@
         </xsd:annotation>
         <xsd:sequence>
             <xsd:element name="supported-types" type="supportedTypesType" minOccurs="1" maxOccurs="1" nillable="false"/>
-            <xsd:element name="credential-handlers" type="credentialHandlersType" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xsd:element name="credential-handlers" type="credentialHandlersType" minOccurs="0" maxOccurs="1"
+                         nillable="true"/>
         </xsd:sequence>
         <xsd:attribute name="support-credential" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
@@ -89,7 +91,8 @@
             <xsd:documentation>The supported-types element schema.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="supported-type" type="supportedType" minOccurs="0" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="supported-type" type="supportedType" minOccurs="0" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
         <xsd:attribute name="supports-all" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
@@ -129,7 +132,8 @@
             <xsd:documentation>The credential-handlers element schema.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="credential-handler" type="credentialHandlerType" minOccurs="0" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="credential-handler" type="credentialHandlerType" minOccurs="0" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -168,7 +172,8 @@
             <xsd:extension base="identityStoreType">
                 <xsd:attribute name="entity-manager-factory" type="xsd:string" use="optional">
                     <xsd:annotation>
-                        <xsd:documentation>The JNDI url of the EntityManagerFactory that should be used, instead of the default
+                        <xsd:documentation>The JNDI url of the EntityManagerFactory that should be used, instead of the
+                            default
                             factory.
                         </xsd:documentation>
                     </xsd:annotation>
@@ -182,14 +187,17 @@
                 </xsd:attribute>
                 <xsd:attribute name="entity-module" type="xsd:string" use="optional">
                     <xsd:annotation>
-                        <xsd:documentation>The name of the module where the JPA entities are located. Those entities will be used to
+                        <xsd:documentation>The name of the module where the JPA entities are located. Those entities
+                            will be used to
                             initialize the JPA store.
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="entity-module-unit-name" type="xsd:string" use="optional" default="identity">
                     <xsd:annotation>
-                        <xsd:documentation>The name of the persistence unit name, if the entity-module attribute is present.</xsd:documentation>
+                        <xsd:documentation>The name of the persistence unit name, if the entity-module attribute is
+                            present.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
             </xsd:extension>
@@ -204,7 +212,9 @@
             <xsd:extension base="identityStoreType">
                 <xsd:attribute name="working-dir" type="xsd:string" use="optional" default="picketlink/idm">
                     <xsd:annotation>
-                        <xsd:documentation>The working directory where data is located. If relative-to is specified, the working-dir is relative to its value.</xsd:documentation>
+                        <xsd:documentation>The working directory where data is located. If relative-to is specified, the
+                            working-dir is relative to its value.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="relative-to" type="xsd:string" use="optional" default="jboss.server.data.dir">
@@ -218,7 +228,8 @@
                 </xsd:attribute>
                 <xsd:attribute name="always-create-files" type="xsd:boolean" use="optional" default="true">
                     <xsd:annotation>
-                        <xsd:documentation>Defines if data should be always re-created between initializations.</xsd:documentation>
+                        <xsd:documentation>Defines if data should be always re-created between initializations.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="async-write" type="xsd:boolean" use="optional" default="false">
@@ -228,7 +239,8 @@
                 </xsd:attribute>
                 <xsd:attribute name="async-write-thread-pool" type="xsd:int" use="optional" default="5">
                     <xsd:annotation>
-                        <xsd:documentation>The size of the thread pool if asynchronous writing is enabled.</xsd:documentation>
+                        <xsd:documentation>The size of the thread pool if asynchronous writing is enabled.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
             </xsd:extension>
@@ -251,7 +263,8 @@
                 </xsd:attribute>
                 <xsd:attribute name="bind-dn" type="xsd:string" use="required">
                     <xsd:annotation>
-                        <xsd:documentation>Defines if data should be always re-created between initializations.</xsd:documentation>
+                        <xsd:documentation>Defines if data should be always re-created between initializations.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="bind-credential" type="xsd:string" use="required">
@@ -261,7 +274,8 @@
                 </xsd:attribute>
                 <xsd:attribute name="base-dn-suffix" type="xsd:string" use="required">
                     <xsd:annotation>
-                        <xsd:documentation>The size of the thread pool if asynchronous writing is enabled.</xsd:documentation>
+                        <xsd:documentation>The size of the thread pool if asynchronous writing is enabled.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="active-directory" type="xsd:boolean" use="optional" default="false">
@@ -271,7 +285,8 @@
                 </xsd:attribute>
                 <xsd:attribute name="unique-id-attribute-name" type="xsd:string" use="optional">
                     <xsd:annotation>
-                        <xsd:documentation>The name of a LDAP attribute that unique identifies entries.</xsd:documentation>
+                        <xsd:documentation>The name of a LDAP attribute that unique identifies entries.
+                        </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
             </xsd:extension>
@@ -326,12 +341,16 @@
         </xsd:attribute>
         <xsd:attribute name="relates-to" type="xsd:string" use="optional">
             <xsd:annotation>
-                <xsd:documentation>Tells that this mapping is related with another mapped type. Useful for relationship mappings.</xsd:documentation>
+                <xsd:documentation>Tells that this mapping is related with another mapped type. Useful for relationship
+                    mappings.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="parent-membership-attribute-name" type="xsd:string" use="optional">
             <xsd:annotation>
-                <xsd:documentation>The name of the LDAP attribute used to map parent-child relationships of the same type.</xsd:documentation>
+                <xsd:documentation>The name of the LDAP attribute used to map parent-child relationships of the same
+                    type.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>

@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:threads:1.0"
-            xmlns="urn:jboss:domain:threads:1.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+           targetNamespace="urn:jboss:domain:threads:1.0"
+           xmlns="urn:jboss:domain:threads:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
     <!-- The threads subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -52,7 +52,7 @@
     <xs:complexType name="thread-factory">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A thread factory (implementing java.util.concurrent.ThreadFactory).  The "name" attribute is
                 the bean name of the created thread factory.  The optional "priority" attribute may be used to specify
                 the thread priority of created threads.  The optional "group-name" attribute specifies the name of a the
@@ -82,7 +82,7 @@
     <xs:complexType name="unbounded-queue-thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A thread pool executor with an unbounded queue.  Such a thread pool has a core size and a queue with no
                 upper bound.  When a task is submitted, if the number of running threads is less than the core size,
                 a new thread is created.  Otherwise, the task is placed in queue.  If too many tasks are allowed to be
@@ -110,7 +110,7 @@
     <xs:complexType name="bounded-queue-thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A thread pool executor with a bounded queue.  Such a thread pool has a core and maximum size and a
                 specified queue length.  When a task is submitted, if the number of running threads is less than the
                 core size, a new thread is created.  Otherwise, if there is room in the queue, the task is enqueued.
@@ -151,7 +151,7 @@
     <xs:complexType name="queueless-thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A thread pool executor with no queue.  When a task is submitted, if the number of running threads is
                 less than the maximum size, a new thread is created.  Otherwise, if blocking is enabled, the caller
                 blocks until another thread completes its task and accepts the new one.  Otherwise, the task is handed
@@ -183,7 +183,7 @@
     <xs:complexType name="scheduled-thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A scheduled thread pool executor.  The "name" attribute is the bean name of the created executor.  The
                 "thread-factory" attribute specifies the bean name of the thread factory to use to create worker
                 threads.  The nested "max-threads" element may be used to specify the thread pool size.  The nested
@@ -203,7 +203,7 @@
     <xs:simpleType name="priority">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A priority which can range from 1 to 10 (inclusive).  See http://java.sun.com/javase/6/docs/api/java/lang/Thread.html#setPriority(int) for more information.
             ]]>
             </xs:documentation>
@@ -217,7 +217,7 @@
     <xs:complexType name="properties">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A set of free-form properties.
             ]]>
             </xs:documentation>
@@ -230,7 +230,7 @@
     <xs:complexType name="property">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A free-form property.  The name is required; the value is optional.
             ]]>
             </xs:documentation>
@@ -242,7 +242,7 @@
     <xs:complexType name="ref">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A reference to another named service.
             ]]>
             </xs:documentation>
@@ -253,7 +253,7 @@
     <xs:complexType name="scaled-count">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A scaled size designation.  The "count" attribute specifies a flat quantity.  The
                 "per-cpu" attribute specifies a quantity per available CPU, as determined by
                 java.lang.Runtime#availableProcessors().  The numbers are added together and rounded off
@@ -268,7 +268,7 @@
     <xs:complexType name="time">
         <xs:annotation>
             <xs:documentation>
-                An amount of time.  Comprised of a time value and a unit value.
+                An amount of time. Comprised of a time value and a unit value.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="time" type="xs:long" use="required"/>

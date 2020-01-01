@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:pojo:7.0"
-            xmlns="urn:jboss:pojo:7.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="7.0">
+           targetNamespace="urn:jboss:pojo:7.0"
+           xmlns="urn:jboss:pojo:7.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="7.0">
 
     <xs:complexType name="deployment">
         <xs:sequence>
@@ -56,7 +56,7 @@
         <xs:attribute name="mode" type="mode" use="optional"/>
     </xs:complexType>
 
-    <xs:complexType name="alias" mixed="true" />
+    <xs:complexType name="alias" mixed="true"/>
 
     <xs:complexType name="classloader">
         <xs:attribute name="name" type="xs:string" use="required"/>

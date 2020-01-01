@@ -67,13 +67,13 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="task-keepalive" type="xs:int" default="60000">
-        <xs:annotation>
-            <xs:documentation>
-                <![CDATA[
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[
                        Specify the number of milliseconds to keep non-core task threads alive.
                 ]]>
-            </xs:documentation>
-        </xs:annotation>
+                </xs:documentation>
+            </xs:annotation>
         </xs:attribute>
         <xs:attribute name="task-max-threads" type="xs:int">
             <xs:annotation>

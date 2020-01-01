@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:logging:1.2"
-            xmlns="urn:jboss:domain:logging:1.2"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.2">
+           targetNamespace="urn:jboss:domain:logging:1.2"
+           xmlns="urn:jboss:domain:logging:1.2"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.2">
 
     <!-- The logging subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the logging subsystem.
             ]]>
             </xs:documentation>
@@ -48,7 +48,7 @@
             <xs:element name="periodic-rotating-file-handler" type="periodicFileHandlerType"/>
             <xs:element name="size-rotating-file-handler" type="sizeFileHandlerType"/>
             <xs:element name="async-handler" type="asyncHandlerType"/>
-            <xs:element name="custom-handler" type="customHandlerType" />
+            <xs:element name="custom-handler" type="customHandlerType"/>
             <xs:element name="syslog-handler" type="syslogHandlerType"/>
             <xs:element name="logging-profiles" type="logging-profilesType" minOccurs="0" maxOccurs="1"/>
         </xs:choice>
@@ -218,7 +218,7 @@
         <xs:attribute name="enabled" type="xs:boolean" use="optional" default="true"/>
     </xs:complexType>
 
-        <xs:complexType name="sizeFileHandlerType">
+    <xs:complexType name="sizeFileHandlerType">
         <xs:annotation>
             <xs:documentation>
                 Defines a handler which writes to a file, rotating the log after the size of the file grows beyond a
@@ -243,7 +243,7 @@
     <xs:complexType name="asyncHandlerType">
         <xs:annotation>
             <xs:documentation>
-                Defines a handler which writes to the sub-handlers in an asynchronous thread.  Used for handlers which
+                Defines a handler which writes to the sub-handlers in an asynchronous thread. Used for handlers which
                 introduce a substantial amount of lag.
             </xs:documentation>
         </xs:annotation>
@@ -426,7 +426,8 @@
     <xs:complexType name="patternFormatterType">
         <xs:annotation>
             <xs:documentation>
-                Defines a pattern formatter.  See the documentation for org.jboss.logmanager.formatters.FormatStringParser
+                Defines a pattern formatter. See the documentation for
+                org.jboss.logmanager.formatters.FormatStringParser
                 for more information about the format string.
             </xs:documentation>
         </xs:annotation>

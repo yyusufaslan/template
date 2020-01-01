@@ -22,11 +22,11 @@
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
 <xs:schema targetNamespace="urn:jboss:domain:distributable-web:1.0"
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:tns="urn:jboss:domain:distributable-web:1.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="urn:jboss:domain:distributable-web:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
     <xs:element name="subsystem" type="tns:subsystem"/>
 
@@ -35,24 +35,29 @@
             <xs:choice maxOccurs="unbounded">
                 <xs:element name="infinispan-session-management" type="tns:infinispan-session-management">
                     <xs:annotation>
-                        <xs:documentation>Defines an Infinispan cache-based session management provider</xs:documentation>
+                        <xs:documentation>Defines an Infinispan cache-based session management provider
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element name="hotrod-session-management" type="tns:hotrod-session-management">
                     <xs:annotation>
-                        <xs:documentation>Defines a deployment specific HotRod remote cache-based session management provider</xs:documentation>
+                        <xs:documentation>Defines a deployment specific HotRod remote cache-based session management
+                            provider
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:element>
             </xs:choice>
             <xs:choice maxOccurs="unbounded">
                 <xs:element name="infinispan-single-sign-on-management" type="tns:infinispan-single-sign-on-management">
                     <xs:annotation>
-                        <xs:documentation>Defines an Infinispan cache-based single sign-on management provider</xs:documentation>
+                        <xs:documentation>Defines an Infinispan cache-based single sign-on management provider
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element name="hotrod-single-sign-on-management" type="tns:hotrod-single-sign-on-management">
                     <xs:annotation>
-                        <xs:documentation>Defines an HotRod remote cache-based single sign-on management provider</xs:documentation>
+                        <xs:documentation>Defines an HotRod remote cache-based single sign-on management provider
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:element>
             </xs:choice>
@@ -71,7 +76,9 @@
         </xs:sequence>
         <xs:attribute name="default-session-management" type="xs:string" use="required">
             <xs:annotation>
-                <xs:documentation>Identifies the default session management provider for distributable web applications</xs:documentation>
+                <xs:documentation>Identifies the default session management provider for distributable web
+                    applications
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="default-single-sign-on-management" type="xs:string" use="required">
@@ -89,7 +96,8 @@
         </xs:attribute>
         <xs:attribute name="granularity" type="tns:granularity" use="required">
             <xs:annotation>
-                <xs:documentation>Defines the granularity of cache entry mapping for the attributes of a session.</xs:documentation>
+                <xs:documentation>Defines the granularity of cache entry mapping for the attributes of a session.
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -110,7 +118,8 @@
                         <xs:annotation>
                             <xs:documentation>
                                 Web requests not have an affinity for any particular server.
-                                Intended for use cases where web session state is not maintained within the application server.
+                                Intended for use cases where web session state is not maintained within the application
+                                server.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
@@ -126,7 +135,8 @@
                         <xs:annotation>
                             <xs:documentation>
                                 Web requests will have an affinity for the primary owner of a given session.
-                                Behaves the same as local-affinity if the backing cache is not distributed nor replicated.
+                                Behaves the same as local-affinity if the backing cache is not distributed nor
+                                replicated.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
@@ -152,7 +162,8 @@
                         <xs:annotation>
                             <xs:documentation>
                                 Web requests not have an affinity for any particular server.
-                                Intended for use cases where web session state is not maintained within the application server.
+                                Intended for use cases where web session state is not maintained within the application
+                                server.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
@@ -201,7 +212,8 @@
     <xs:attributeGroup name="hotrod">
         <xs:attribute name="remote-cache-container" type="xs:string" use="required">
             <xs:annotation>
-                <xs:documentation>References a remote-cache-container defined by the Infinispan subsystem.</xs:documentation>
+                <xs:documentation>References a remote-cache-container defined by the Infinispan subsystem.
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="cache-configuration" type="xs:string">
@@ -217,7 +229,8 @@
                 <xs:annotation>
                     <xs:documentation>
                         Stores all session attributes within a single cache entry.
-                        Generally more expensive than ATTRIBUTE granularity, but preserves any cross-attribute object references.
+                        Generally more expensive than ATTRIBUTE granularity, but preserves any cross-attribute object
+                        references.
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
@@ -225,7 +238,8 @@
                 <xs:annotation>
                     <xs:documentation>
                         Stores each session attribute within a separate cache entry.
-                        Generally more efficient than SESSION granularity, but does not preserve any cross-attribute object references.
+                        Generally more efficient than SESSION granularity, but does not preserve any cross-attribute
+                        object references.
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>

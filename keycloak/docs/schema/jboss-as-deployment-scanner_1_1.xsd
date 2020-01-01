@@ -20,7 +20,9 @@
   ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
-<xs:schema xmlns="urn:jboss:domain:deployment-scanner:1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:jboss:domain:deployment-scanner:1.1" version="1.1">
+<xs:schema xmlns="urn:jboss:domain:deployment-scanner:1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="urn:jboss:domain:deployment-scanner:1.1" version="1.1">
 
     <!-- The threads subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -34,7 +36,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice maxOccurs="unbounded" minOccurs="0">
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="deployment-scanner" type="standalone-deployment-scanner-type"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="deployment-scanner"
+                        type="standalone-deployment-scanner-type"/>
         </xs:choice>
     </xs:complexType>
 
@@ -44,19 +47,19 @@
                 content can be stored.
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="name" type="xs:string" use="optional" default="default" />
+        <xs:attribute name="name" type="xs:string" use="optional" default="default"/>
         <xs:attribute name="path" use="required">
             <xs:annotation>
                 <xs:documentation>The actual filesystem path. Treated as an absolute path, unless the
-                'relative-to' attribute is specified, in which case the value
-                is treated as relative to that path.
+                    'relative-to' attribute is specified, in which case the value
+                    is treated as relative to that path.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="relative-to" type="xs:string" use="optional">
-           <xs:annotation>
+            <xs:annotation>
                 <xs:documentation>Reference to a filesystem path defined in the "paths" section
-                of the server configuration.
+                    of the server configuration.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -106,8 +109,8 @@
         <xs:attribute name="deployment-timeout" type="xs:int" use="optional" default="600">
             <xs:annotation>
                 <xs:documentation>
-                   Timeout used, in seconds, for deployment operations.  If an individual deployment operation
-                   takes longer than this timeout it will be canceled and marked as failed.
+                    Timeout used, in seconds, for deployment operations. If an individual deployment operation
+                    takes longer than this timeout it will be canceled and marked as failed.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>

@@ -27,7 +27,7 @@
             <xs:element name="imap-server" type="server-type" maxOccurs="1" minOccurs="0"/>
             <xs:element name="custom-server" type="custom-server-type" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="jndi-name" use="required" type="xs:string" />
+        <xs:attribute name="jndi-name" use="required" type="xs:string"/>
         <xs:attribute name="debug" use="optional" type="xs:boolean">
             <xs:annotation>
                 <xs:documentation>
@@ -37,7 +37,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="from" use="optional" type="xs:string" >
+        <xs:attribute name="from" use="optional" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
                     <![CDATA[
@@ -88,10 +88,10 @@
 
     </xs:complexType>
 
-    <xs:complexType name="property-type" >
-            <xs:attribute name="name" type="xs:string"/>
-            <xs:attribute name="value" type="xs:string"/>
-        </xs:complexType>
+    <xs:complexType name="property-type">
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="value" type="xs:string"/>
+    </xs:complexType>
 
 
     <xs:complexType name="custom-server-type" mixed="true">

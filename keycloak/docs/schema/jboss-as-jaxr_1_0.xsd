@@ -28,7 +28,7 @@
         <xs:attribute name="jndi-name" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                <![CDATA[[
+                    <![CDATA[[
                 The JNDI name for the ConnectionFactory
                 ]]>
                 </xs:documentation>

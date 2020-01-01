@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Patent {
+public class Patent extends BaseEntity {
 
     @Id
     public String id;

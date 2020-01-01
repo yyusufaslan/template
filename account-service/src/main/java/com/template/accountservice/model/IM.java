@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class IM {
+public class IM extends BaseEntity {
 
 
     @Id

@@ -27,7 +27,7 @@
            targetNamespace="urn:jboss:domain:1.4"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-        >
+>
 
 
     <xs:element name="domain">
@@ -43,21 +43,24 @@
             <xs:sequence>
                 <xs:element name="extensions" type="extensionsType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="system-properties" type="properties-with-boottime" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="paths" type="named-pathsType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="paths" type="named-pathsType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="profiles" type="profilesType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="interfaces" type="named-interfacesType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="socket-binding-groups" type="socket-binding-groupsType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="deployments" type="domain-deploymentsType" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="deployment-overlays" type="domain-deployment-overlaysType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="deployment-overlays" type="domain-deployment-overlaysType" minOccurs="0"
+                            maxOccurs="1"/>
                 <xs:element name="server-groups" type="server-groupsType" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="management-client-content" type="management-client-contentType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="management-client-content" type="management-client-contentType" minOccurs="0"
+                            maxOccurs="1"/>
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="optional" default="Unnamed Domain">
-               <xs:annotation>
-                  <xs:documentation>
-                     The name to use for the domain controller. Useful for administrators who need to work with multiple domains.
-                  </xs:documentation>
-               </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>
+                        The name to use for the domain controller. Useful for administrators who need to work with
+                        multiple domains.
+                    </xs:documentation>
+                </xs:annotation>
             </xs:attribute>
         </xs:complexType>
     </xs:element>
@@ -77,7 +80,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="system-properties" type="properties-with-boottime" minOccurs="0"/>
-                <xs:element name="paths" type="specified-pathsType" minOccurs="0" maxOccurs="1" />
+                <xs:element name="paths" type="specified-pathsType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="vault" type="vaultType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="management" type="host-managementType" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="domain-controller" type="domain-controllerType"/>
@@ -90,7 +93,8 @@
                     <xs:documentation>
                         The name to use for this host's host controller. Must be unique across the domain.
                         If not set, defaults to the runtime value "HOSTNAME" or "COMPUTERNAME" environment variables,
-                        or, if neither environment variable is present, to the value of InetAddress.getLocalHost().getHostName().
+                        or, if neither environment variable is present, to the value of
+                        InetAddress.getLocalHost().getHostName().
 
                         If the special value "jboss.domain.uuid" is used, a java.util.UUID will be created
                         and used, based on the value of InetAddress.getLocalHost().
@@ -121,16 +125,19 @@
                 <xs:element name="management" type="server-managementType" minOccurs="0" maxOccurs="1"/>
                 <xs:element name="profile" type="standalone-profileType" minOccurs="0"/>
                 <xs:element name="interfaces" type="specified-interfacesType" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="socket-binding-group" type="standalone-socket-binding-groupType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="socket-binding-group" type="standalone-socket-binding-groupType" minOccurs="0"
+                            maxOccurs="1"/>
                 <xs:element name="deployments" type="server-deploymentsType" minOccurs="0" maxOccurs="1"/>
-                <xs:element name="deployment-overlays" type="standalone-deployment-overlaysType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="deployment-overlays" type="standalone-deployment-overlaysType" minOccurs="0"
+                            maxOccurs="1"/>
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="optional">
                 <xs:annotation>
                     <xs:documentation>
                         The name to use for this server.
                         If not set, defaults to the runtime value "HOSTNAME" or "COMPUTERNAME" environment variables,
-                        or, if neither environment variable is present, to the value of InetAddress.getLocalHost().getHostName().
+                        or, if neither environment variable is present, to the value of
+                        InetAddress.getLocalHost().getHostName().
 
                         If the special value "jboss.domain.uuid" is used, a java.util.UUID will be created
                         and used, based on the value of InetAddress.getLocalHost().
@@ -143,7 +150,8 @@
     <xs:complexType name="domain-managementType">
         <xs:annotation>
             <xs:documentation>
-                Domain-wide default configuration settings for the management of standalone servers and a Host Controller.
+                Domain-wide default configuration settings for the management of standalone servers and a Host
+                Controller.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -158,7 +166,8 @@
             <xs:element name="outbound-connections" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
-                      <xs:element name="ldap" type="ldapType" minOccurs="1" /> <!-- TODO minOccurs only while ldap is only supported connection. -->
+                        <xs:element name="ldap" type="ldapType"
+                                    minOccurs="1"/> <!-- TODO minOccurs only while ldap is only supported connection. -->
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -255,10 +264,10 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="plug-ins" type="plug-insType" minOccurs="0" />
-            <xs:element name="server-identities" type="server-identitiesType" minOccurs="0" />
-            <xs:element name="authentication" type="authenticationType" minOccurs="0" />
-            <xs:element name="authorization" type="authorizationType" minOccurs="0" />
+            <xs:element name="plug-ins" type="plug-insType" minOccurs="0"/>
+            <xs:element name="server-identities" type="server-identitiesType" minOccurs="0"/>
+            <xs:element name="authentication" type="authenticationType" minOccurs="0"/>
+            <xs:element name="authorization" type="authorizationType" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required">
             <xs:annotation>
@@ -276,7 +285,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="plug-in" type="plug-inType" />
+            <xs:element name="plug-in" type="plug-inType"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -313,18 +322,18 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="mechanism" default="DIGEST" use="optional">
-           <xs:annotation>
-              <xs:documentation>
-                   By default plug-ins will be assumed to be used with the DIGEST authentication mechanism,
-                   this attribute can override the plug-in for use with the PLAIN mechanism.
-              </xs:documentation>
-           </xs:annotation>
-           <xs:simpleType>
-              <xs:restriction base="xs:string">
-                 <xs:enumeration value="DIGEST" />
-                 <xs:enumeration value="PLAIN" />
-              </xs:restriction>
-           </xs:simpleType>
+            <xs:annotation>
+                <xs:documentation>
+                    By default plug-ins will be assumed to be used with the DIGEST authentication mechanism,
+                    this attribute can override the plug-in for use with the PLAIN mechanism.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="DIGEST"/>
+                    <xs:enumeration value="PLAIN"/>
+                </xs:restriction>
+            </xs:simpleType>
         </xs:attribute>
     </xs:complexType>
 
@@ -339,8 +348,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="properties" type="propertiesFileType" minOccurs="0" />
-            <xs:element name="plug-in" type="plug-inAuthType" minOccurs="0" />
+            <xs:element name="properties" type="propertiesFileType" minOccurs="0"/>
+            <xs:element name="plug-in" type="plug-inAuthType" minOccurs="0"/>
         </xs:choice>
     </xs:complexType>
 
@@ -351,8 +360,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-          <xs:element name="ssl" type="sslType" minOccurs="0" />
-          <xs:element name="secret" type="secretType" minOccurs="0" />
+            <xs:element name="ssl" type="sslType" minOccurs="0"/>
+            <xs:element name="secret" type="secretType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -378,7 +387,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="keystore" type="extendedKeyStoreType" />
+            <xs:element name="keystore" type="extendedKeyStoreType"/>
         </xs:sequence>
         <xs:attribute name="protocol" type="xs:string" default="TLS">
             <xs:annotation>
@@ -428,7 +437,7 @@
                 and key password to be specified.
             </xs:documentation>
         </xs:annotation>
-	    <xs:complexContent>
+        <xs:complexContent>
             <xs:extension base="keyStoreType">
                 <xs:attribute name="alias" type="xs:string" use="optional">
                     <xs:annotation>
@@ -445,8 +454,8 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-		    </xs:extension>
-	    </xs:complexContent>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="localType">
@@ -471,7 +480,7 @@
                     using the local authentication mechanism.
 
                     If a default user has been specified then that user is automatically added to the
-                    allowed list.  If both default-user and allowed-users are omitted despite the mechanism
+                    allowed list. If both default-user and allowed-users are omitted despite the mechanism
                     being enabled no incoming connection attemps using the mechanism will succeed.
 
                     If any user name should be accepted the value should be set to "*".
@@ -510,11 +519,11 @@
                 </xs:annotation>
             </xs:element>
             <xs:choice minOccurs="0">
-                <xs:element name="jaas" type="jaasAuthenticationType" minOccurs="0" />
-                <xs:element name="ldap" type="ldapAuthenticationType" minOccurs="0" />
-                <xs:element name="properties" type="propertiesAuthenticationType" minOccurs="0" />
-                <xs:element name="users" type="usersAuthenticationType" minOccurs="0" />
-                <xs:element name="plug-in" type="plug-inAuthType" minOccurs="0" />
+                <xs:element name="jaas" type="jaasAuthenticationType" minOccurs="0"/>
+                <xs:element name="ldap" type="ldapAuthenticationType" minOccurs="0"/>
+                <xs:element name="properties" type="propertiesAuthenticationType" minOccurs="0"/>
+                <xs:element name="users" type="usersAuthenticationType" minOccurs="0"/>
+                <xs:element name="plug-in" type="plug-inAuthType" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
@@ -600,7 +609,7 @@
         <xs:attribute name="allow-empty-passwords" type="xs:boolean" default="false">
             <xs:annotation>
                 <xs:documentation>
-                    Should users be allowed to supply an empty password?  Some LDAP servers will
+                    Should users be allowed to supply an empty password? Some LDAP servers will
                     allow an anonymous bind so an empty password could appear as a successful authentication
                     even though no password was sent to verify.
                 </xs:documentation>
@@ -610,7 +619,7 @@
 
 
     <xs:complexType name="usersAuthenticationType">
-           <xs:annotation>
+        <xs:annotation>
             <xs:documentation>
                 A set of users
             </xs:documentation>
@@ -627,7 +636,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="password" type="xs:string" />
+            <xs:element name="password" type="xs:string"/>
         </xs:choice>
         <xs:attribute name="username" type="xs:string" use="required">
             <xs:annotation>
@@ -682,7 +691,7 @@
                             of 'username : realm : password'.
                         </xs:documentation>
                     </xs:annotation>
-            </xs:attribute>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -845,7 +854,8 @@
     <xs:complexType name="native-management-socket-binding-refType">
         <xs:annotation>
             <xs:documentation>
-                Reference to the configuration of the socket to be used by a standalone server's exposed native management interface.
+                Reference to the configuration of the socket to be used by a standalone server's exposed native
+                management interface.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="native" type="xs:string" use="required">
@@ -887,22 +897,26 @@
     <xs:complexType name="http-management-socket-binding-refType">
         <xs:annotation>
             <xs:documentation>
-                Reference to the configurations of the sockets to be used by a standalone server's exposed HTTP and HTTPS management interface.
+                Reference to the configurations of the sockets to be used by a standalone server's exposed HTTP and
+                HTTPS management interface.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="http" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Name of a socket-binding configuration declared in the server's socket-binding-group to use for a HTTP socket.
+                    Name of a socket-binding configuration declared in the server's socket-binding-group to use for a
+                    HTTP socket.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="https" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Name of a socket-binding configuration declared in the server's socket-binding-group to use for a HTTPS socket.
-                    
-                    Note: When specified the interface must also be configured to reference a security realm with a configured keystore.
+                    Name of a socket-binding configuration declared in the server's socket-binding-group to use for a
+                    HTTPS socket.
+
+                    Note: When specified the interface must also be configured to reference a security realm with a
+                    configured keystore.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -924,16 +938,16 @@
         </xs:choice>
     </xs:complexType>
 
-    <xs:complexType name="domain-controller-localType" />
+    <xs:complexType name="domain-controller-localType"/>
 
     <xs:complexType name="domain-controller-remoteType">
         <xs:sequence>
             <xs:element name="ignored-resources" type="ignored-resourcesType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="host" type="xs:string" use="required" />
-        <xs:attribute name="port" type="xs:integer" use="required" />
-        <xs:attribute name="security-realm" type="xs:string" use="optional" />
-        <xs:attribute name="username" type="xs:string" use="optional" />
+        <xs:attribute name="host" type="xs:string" use="required"/>
+        <xs:attribute name="port" type="xs:integer" use="required"/>
+        <xs:attribute name="security-realm" type="xs:string" use="optional"/>
+        <xs:attribute name="username" type="xs:string" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="ignored-resourcesType">
@@ -950,8 +964,8 @@
                 Supports the following attributes:
 
                 type -- the type of resource (e.g. 'profile' or 'socket-binding-group') certain instances of which
-                        should be ignored. The value corresponds to the 'key' portion of the first element in the
-                        resource's address (e.g. 'profile' in the address /profile=ha/subsystem=web)
+                should be ignored. The value corresponds to the 'key' portion of the first element in the
+                resource's address (e.g. 'profile' in the address /profile=ha/subsystem=web)
 
                 wildcard -- if 'true', all resources of the given type should be ignored.
 
@@ -963,9 +977,9 @@
         <xs:sequence>
             <xs:element name="instance" type="ignored-resource-instanceType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="type" type="xs:string" use="required" />
-        <xs:attribute name="wildcard" type="xs:boolean" use="optional" default="false" />
-        <xs:attribute name="names" type="xs:string" use="optional" />
+        <xs:attribute name="type" type="xs:string" use="required"/>
+        <xs:attribute name="wildcard" type="xs:boolean" use="optional" default="false"/>
+        <xs:attribute name="names" type="xs:string" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="ignored-resource-instanceType">
@@ -976,7 +990,7 @@
                 (e.g. 'ha' in the address /profile=ha/subsystem=web.)
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="serversType">
@@ -1010,7 +1024,7 @@
 
     <xs:complexType name="serverType">
         <xs:all>
-            <xs:element name="paths" type="specified-pathsType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="paths" type="specified-pathsType" minOccurs="0" maxOccurs="1"/>
 
             <xs:element name="interfaces" type="specified-interfacesType" minOccurs="0"/>
             <xs:element name="socket-bindings" type="server-socket-bindingsType" minOccurs="0"/>
@@ -1027,7 +1041,7 @@
     <xs:complexType name="server-socket-bindingsType">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 Server-specific overrides to the default socket binding configuration inherited from the server group.
             ]]>
             </xs:documentation>
@@ -1035,7 +1049,7 @@
         <xs:attribute name="socket-binding-group" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                <![CDATA[
+                    <![CDATA[
                     The socket binding group to use for the server. If undefined, the socket binding group
                     specified for the server group is used.
                 ]]>
@@ -1045,7 +1059,7 @@
         <xs:attribute name="port-offset" type="xs:int" default="0" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                <![CDATA[
+                    <![CDATA[
                     Increment to apply to the base port values defined in the
                     referenced socket binding group to derive the values to use on this
                     server.
@@ -1090,7 +1104,8 @@
             <xs:element name="socket-binding-group" type="socket-binding-group-refType" minOccurs="1"/>
 
             <xs:element name="deployments" type="server-groupDeploymentsType" minOccurs="0"/>
-            <xs:element name="deployment-overlays" type="server-group-deployment-overlaysType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="deployment-overlays" type="server-group-deployment-overlaysType" minOccurs="0"
+                        maxOccurs="1"/>
 
             <xs:element name="system-properties" minOccurs="0" type="properties-with-boottime"/>
         </xs:sequence>
@@ -1111,7 +1126,8 @@
         <xs:attribute name="management-subsystem-endpoint" type="xs:boolean" default="false">
             <xs:annotation>
                 <xs:documentation>
-                    Set to true to have servers belonging to the server group connect back to the host controller using the
+                    Set to true to have servers belonging to the server group connect back to the host controller using
+                    the
                     endpoint from their remoting subsystem. The subsystem must be preset for this to
                     work.
                 </xs:documentation>
@@ -1359,7 +1375,8 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="socket-binding" type="socket-bindingType" maxOccurs="unbounded"/>
-            <xs:element name="outbound-socket-binding" type="outbound-socket-bindingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="outbound-socket-binding" type="outbound-socket-bindingType" minOccurs="0"
+                        maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required"/>
         <xs:attribute name="default-interface" type="xs:string" use="required">
@@ -1378,7 +1395,8 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="socket-binding" type="socket-bindingType" maxOccurs="unbounded"/>
-            <xs:element name="outbound-socket-binding" type="outbound-socket-bindingType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="outbound-socket-binding" type="outbound-socket-bindingType" minOccurs="0"
+                        maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required"/>
         <xs:attribute name="default-interface" type="xs:string" use="required">
@@ -1389,15 +1407,15 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-	    <xs:attribute name="port-offset" type="xs:int" use="optional" default="0">
-	        <xs:annotation>
+        <xs:attribute name="port-offset" type="xs:int" use="optional" default="0">
+            <xs:annotation>
                 <xs:documentation>
-	                    Increment to apply to the base port values defined in the
-	                    socket group to derive the values to use on this
-	                    server.
-	            </xs:documentation>
-	        </xs:annotation>
-	    </xs:attribute>
+                    Increment to apply to the base port values defined in the
+                    socket group to derive the values to use on this
+                    server.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
 
     <xs:complexType name="socket-bindingType">
@@ -1468,13 +1486,13 @@
 
     <xs:complexType name="socket-binding-client-mappingType">
         <xs:annotation>
-                <xs:documentation>
-                    Type definition for a client mapping on a socket binding. A client
-                    mapping specifies how external clients should connect to this
-                    socket's port, provided that the client's outbound interface
-                    match the specified source network value.
-                </xs:documentation>
-            </xs:annotation>
+            <xs:documentation>
+                Type definition for a client mapping on a socket binding. A client
+                mapping specifies how external clients should connect to this
+                socket's port, provided that the client's outbound interface
+                match the specified source network value.
+            </xs:documentation>
+        </xs:annotation>
         <xs:attribute name="source-network" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
@@ -1956,20 +1974,20 @@
                 <xs:attribute name="name" type="xs:string" use="required">
                     <xs:annotation>
                         <xs:documentation>
-                        The name of the path. Cannot be one of the standard fixed paths
-                        provided by the system:
+                            The name of the path. Cannot be one of the standard fixed paths
+                            provided by the system:
 
-                        jboss.home.dir - the root directory of the JBoss AS distribution
-                        user.home - user's home directory
-                        user.dir - user's current working directory
-                        java.home - java installation directory
-                        jboss.server.base.dir - root directory for an individual server
-                                                instance
+                            jboss.home.dir - the root directory of the JBoss AS distribution
+                            user.home - user's home directory
+                            user.dir - user's current working directory
+                            java.home - java installation directory
+                            jboss.server.base.dir - root directory for an individual server
+                            instance
 
-                        Note that the system provides other standard paths that can be
-                        overridden by declaring them in the configuration file. See
-                        the 'relative-to' attribute documentation for a complete
-                        list of standard paths.
+                            Note that the system provides other standard paths that can be
+                            overridden by declaring them in the configuration file. See
+                            the 'relative-to' attribute documentation for a complete
+                            list of standard paths.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
@@ -1981,21 +1999,21 @@
         <xs:attribute name="path">
             <xs:annotation>
                 <xs:documentation>
-                The actual filesystem path. Treated as an absolute path, unless the
-                'relative-to' attribute is specified, in which case the value
-                is treated as relative to that path.
+                    The actual filesystem path. Treated as an absolute path, unless the
+                    'relative-to' attribute is specified, in which case the value
+                    is treated as relative to that path.
 
-                If treated as an absolute path, the actual runtime pathname specified
-                by the value of this attribute will be determined as follows:
+                    If treated as an absolute path, the actual runtime pathname specified
+                    by the value of this attribute will be determined as follows:
 
-                If this value is already absolute, then the value is directly
-                used.  Otherwise the runtime pathname is resolved in a
-                system-dependent way.  On UNIX systems, a relative pathname is
-                made absolute by resolving it against the current user directory.
-                On Microsoft Windows systems, a relative pathname is made absolute
-                by resolving it against the current directory of the drive named by the
-                pathname, if any; if not, it is resolved against the current user
-                directory.
+                    If this value is already absolute, then the value is directly
+                    used. Otherwise the runtime pathname is resolved in a
+                    system-dependent way. On UNIX systems, a relative pathname is
+                    made absolute by resolving it against the current user directory.
+                    On Microsoft Windows systems, a relative pathname is made absolute
+                    by resolving it against the current directory of the drive named by the
+                    pathname, if any; if not, it is resolved against the current user
+                    directory.
                 </xs:documentation>
             </xs:annotation>
             <xs:simpleType>
@@ -2007,29 +2025,29 @@
         <xs:attribute name="relative-to" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                The name of another previously named path, or of one of the
-                standard paths provided by the system. If 'relative-to' is
-                provided, the value of the 'path' attribute is treated as
-                relative to the path specified by this attribute. The standard
-                paths provided by the system include:
+                    The name of another previously named path, or of one of the
+                    standard paths provided by the system. If 'relative-to' is
+                    provided, the value of the 'path' attribute is treated as
+                    relative to the path specified by this attribute. The standard
+                    paths provided by the system include:
 
-                jboss.home.dir - the root directory of the JBoss AS distribution
-                user.home - user's home directory
-                user.dir - user's current working directory
-                java.home - java installation directory
-                jboss.server.base.dir - root directory for an individual server
-                                        instance
-                jboss.server.config.dir - directory in which server configuration
-                                          files are stored.
-                jboss.server.data.dir - directory the server will use for persistent
-                                        data file storage
-                jboss.server.log.dir - directory the server will use for
-                                       log file storage
-                jboss.server.temp.dir - directory the server will use for
-                                       temporary file storage
-                jboss.domain.servers.dir - directory under which a host controller
-                                           will create the working area for
-                                           individual server instances
+                    jboss.home.dir - the root directory of the JBoss AS distribution
+                    user.home - user's home directory
+                    user.dir - user's current working directory
+                    java.home - java installation directory
+                    jboss.server.base.dir - root directory for an individual server
+                    instance
+                    jboss.server.config.dir - directory in which server configuration
+                    files are stored.
+                    jboss.server.data.dir - directory the server will use for persistent
+                    data file storage
+                    jboss.server.log.dir - directory the server will use for
+                    log file storage
+                    jboss.server.temp.dir - directory the server will use for
+                    temporary file storage
+                    jboss.domain.servers.dir - directory under which a host controller
+                    will create the working area for
+                    individual server instances
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -2055,43 +2073,43 @@
         <xs:attribute name="name" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
-                The name of the path. Cannot be one of the standard fixed paths
-                provided by the system:
+                    The name of the path. Cannot be one of the standard fixed paths
+                    provided by the system:
 
-                jboss.home.dir - the root directory of the JBoss AS distribution
-                user.home - user's home directory
-                user.dir - user's current working directory
-                java.home - java installation directory
-                jboss.server.base.dir - root directory for an individual server
-                                        instance
+                    jboss.home.dir - the root directory of the JBoss AS distribution
+                    user.home - user's home directory
+                    user.dir - user's current working directory
+                    java.home - java installation directory
+                    jboss.server.base.dir - root directory for an individual server
+                    instance
 
-                Note that the system provides other standard paths that can be
-                overridden by declaring them in the configuration file. See
-                the 'relative-to' attribute documentation for a complete
-                list of standard paths.
+                    Note that the system provides other standard paths that can be
+                    overridden by declaring them in the configuration file. See
+                    the 'relative-to' attribute documentation for a complete
+                    list of standard paths.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="path" use="required">
             <xs:annotation>
                 <xs:documentation>
-                The actual filesystem path. Treated as an absolute path, unless the
-                'relative-to' attribute is specified, in which case the value
-                is treated as relative to that path.
+                    The actual filesystem path. Treated as an absolute path, unless the
+                    'relative-to' attribute is specified, in which case the value
+                    is treated as relative to that path.
 
-                If treated as an absolute path, the actual runtime pathname specified
-                by the value of this attribute will be determined as follows:
+                    If treated as an absolute path, the actual runtime pathname specified
+                    by the value of this attribute will be determined as follows:
 
-                If this value is already absolute, then the value is directly
-                used.  Otherwise the runtime pathname is resolved in a
-                system-dependent way.  On UNIX systems, a relative pathname is
-                made absolute by resolving it against the current user directory.
-                On Microsoft Windows systems, a relative pathname is made absolute
-                by resolving it against the current directory of the drive named by the
-                pathname, if any; if not, it is resolved against the current user
-                directory.
+                    If this value is already absolute, then the value is directly
+                    used. Otherwise the runtime pathname is resolved in a
+                    system-dependent way. On UNIX systems, a relative pathname is
+                    made absolute by resolving it against the current user directory.
+                    On Microsoft Windows systems, a relative pathname is made absolute
+                    by resolving it against the current directory of the drive named by the
+                    pathname, if any; if not, it is resolved against the current user
+                    directory.
 
-                Note relative path declarations have to use '/' as file separator.
+                    Note relative path declarations have to use '/' as file separator.
                 </xs:documentation>
             </xs:annotation>
             <xs:simpleType>
@@ -2103,29 +2121,29 @@
         <xs:attribute name="relative-to" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                The name of another previously named path, or of one of the
-                standard paths provided by the system. If 'relative-to' is
-                provided, the value of the 'path' attribute is treated as
-                relative to the path specified by this attribute. The standard
-                paths provided by the system include:
+                    The name of another previously named path, or of one of the
+                    standard paths provided by the system. If 'relative-to' is
+                    provided, the value of the 'path' attribute is treated as
+                    relative to the path specified by this attribute. The standard
+                    paths provided by the system include:
 
-                jboss.home.dir - the root directory of the JBoss AS distribution
-                user.home - user's home directory
-                user.dir - user's current working directory
-                java.home - java installation directory
-                jboss.server.base.dir - root directory for an individual server
-                                        instance
-                jboss.server.config.dir - directory in which server configuration
-                                          files are stored.
-                jboss.server.data.dir - directory the server will use for persistent
-                                        data file storage
-                jboss.server.log.dir - directory the server will use for
-                                       log file storage
-                jboss.server.temp.dir - directory the server will use for
-                                       temporary file storage
-                jboss.domain.servers.dir - directory under which a host controller
-                                           will create the working area for
-                                           individual server instances
+                    jboss.home.dir - the root directory of the JBoss AS distribution
+                    user.home - user's home directory
+                    user.dir - user's current working directory
+                    java.home - java installation directory
+                    jboss.server.base.dir - root directory for an individual server
+                    instance
+                    jboss.server.config.dir - directory in which server configuration
+                    files are stored.
+                    jboss.server.data.dir - directory the server will use for persistent
+                    data file storage
+                    jboss.server.log.dir - directory the server will use for
+                    log file storage
+                    jboss.server.temp.dir - directory the server will use for
+                    temporary file storage
+                    jboss.domain.servers.dir - directory under which a host controller
+                    will create the working area for
+                    individual server instances
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -2156,13 +2174,15 @@
             <xs:simpleType>
                 <xs:restriction base="xs:token">
                     <xs:enumeration value="SUN">
-			            <xs:annotation>
-			                <xs:documentation>Allows the full set of JVM options to be set via the jvm schema elements</xs:documentation>
-			            </xs:annotation>
+                        <xs:annotation>
+                            <xs:documentation>Allows the full set of JVM options to be set via the jvm schema elements
+                            </xs:documentation>
+                        </xs:annotation>
                     </xs:enumeration>
                     <xs:enumeration value="IBM">
                         <xs:annotation>
-                            <xs:documentation>Sets a subset of the JVM options via the jvm schema elements</xs:documentation>
+                            <xs:documentation>Sets a subset of the JVM options via the jvm schema elements
+                            </xs:documentation>
                         </xs:annotation>
                     </xs:enumeration>
                 </xs:restriction>
@@ -2183,7 +2203,7 @@
         <xs:complexContent>
             <xs:extension base="namedJvmType">
                 <xs:attribute name="debug-enabled" type="xs:boolean" default="false"/>
-                <xs:attribute name="debug-options" type="xs:string" />
+                <xs:attribute name="debug-options" type="xs:string"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -2218,7 +2238,7 @@
     <xs:complexType name="jvm-agentLibType">
         <xs:attribute name="value" use="required">
             <xs:annotation>
-                <xs:documentation>JVM agent lib value </xs:documentation>
+                <xs:documentation>JVM agent lib value</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -2226,7 +2246,7 @@
     <xs:complexType name="jvm-agentPathType">
         <xs:attribute name="value" use="required">
             <xs:annotation>
-                <xs:documentation>JVM agent path value </xs:documentation>
+                <xs:documentation>JVM agent path value</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -2234,7 +2254,7 @@
     <xs:complexType name="jvm-javaagentType">
         <xs:attribute name="value" use="required">
             <xs:annotation>
-                <xs:documentation>JVM javaagent value </xs:documentation>
+                <xs:documentation>JVM javaagent value</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -2279,19 +2299,19 @@
         </xs:complexContent>
     </xs:complexType>
 
-   <xs:complexType name="vaultType">
-      <xs:annotation>
-         <xs:documentation>
-               <![CDATA[
+    <xs:complexType name="vaultType">
+        <xs:annotation>
+            <xs:documentation>
+                <![CDATA[
                     Vault Configuration.
                 ]]>
-         </xs:documentation>
-      </xs:annotation>
-      <xs:sequence>
-          <xs:element name="vault-option" type="propertyType" minOccurs="0" maxOccurs="unbounded"/>
-      </xs:sequence>
-      <xs:attribute name="code" type="xs:string" use="optional"/>
-   </xs:complexType>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="vault-option" type="propertyType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="code" type="xs:string" use="optional"/>
+    </xs:complexType>
 
     <xs:complexType name="management-client-contentType">
         <xs:annotation>
@@ -2327,7 +2347,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="deployment-overlay" type="standalone-deployment-overlayType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="deployment-overlay" type="standalone-deployment-overlayType" minOccurs="0"
+                        maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -2348,7 +2369,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="deployment-overlay" type="domain-deployment-overlayType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="deployment-overlay" type="domain-deployment-overlayType" minOccurs="0"
+                        maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -2368,7 +2390,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="deployment-overlay" type="server-group-deployment-overlayType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="deployment-overlay" type="server-group-deployment-overlayType" minOccurs="0"
+                        maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

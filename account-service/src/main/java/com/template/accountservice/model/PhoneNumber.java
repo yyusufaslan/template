@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class PhoneNumber {
+public class PhoneNumber extends BaseEntity {
     @Id
     public UUID id;
     public String number;

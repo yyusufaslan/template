@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:xts:2.0"
-            xmlns="urn:jboss:domain:xts:2.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="2.0">
+           targetNamespace="urn:jboss:domain:xts:2.0"
+           xmlns="urn:jboss:domain:xts:2.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.0">
 
     <!-- The xts subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the XTS subsystem.
 
                 This is just the minimum to get XTS bootstrapped as an AS7 extension.
@@ -45,7 +45,8 @@
         <xs:all>
             <xs:element name="host" type="host" minOccurs="0" maxOccurs="1"/>
             <xs:element name="xts-environment" type="xts-environment" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="default-context-propagation" type="default-context-propagation" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="default-context-propagation" type="default-context-propagation" minOccurs="0"
+                        maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
@@ -63,7 +64,7 @@
     <xs:complexType name="xts-environment">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 url configures XTS clients to use remote transaction coordination services.
                 if it is left unset then clients employ the local coordinator services.
                 the value should identify an OASIS WSTX 1.1 Activation Coordinator service.
@@ -75,13 +76,13 @@
             ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="url" type="xs:string" use="optional" />
+        <xs:attribute name="url" type="xs:string" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="default-context-propagation">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 'enabled' states whether to automatically propagate transactional context.
                 When set to 'true', Web Service clients will automatically propagate a WS-AT
                 transactional context if a JTA or WS-AT transaction is running when the call is made.
@@ -92,7 +93,7 @@
             ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="enabled" type="xs:boolean" use="optional" />
+        <xs:attribute name="enabled" type="xs:boolean" use="optional"/>
     </xs:complexType>
 
 </xs:schema>

@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Organization {
+public class Organization extends BaseEntity {
 
     @Id
     public UUID id;

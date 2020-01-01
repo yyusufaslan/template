@@ -86,7 +86,8 @@
                             <xs:annotation>
                                 <xs:documentation>
                                     Timeout used in seconds, for listener operations.
-                                    If an individual listener operation takes longer than this timeout it will be canceled.
+                                    If an individual listener operation takes longer than this timeout it will be
+                                    canceled.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:attribute>

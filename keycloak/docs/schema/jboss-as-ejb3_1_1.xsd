@@ -134,8 +134,8 @@
     </xs:complexType>
 
     <xs:complexType name="dataStoreType">
-        <xs:attribute name="path" type="xs:string" />
-        <xs:attribute name="relative-to" type="xs:string" />
+        <xs:attribute name="path" type="xs:string"/>
+        <xs:attribute name="relative-to" type="xs:string"/>
     </xs:complexType>
 
 </xs:schema>

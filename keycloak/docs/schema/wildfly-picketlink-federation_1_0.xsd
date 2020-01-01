@@ -24,9 +24,9 @@
     <xsd:element name="subsystem" type="subsystemType"/>
 
     <xsd:complexType name="subsystemType">
-      <xsd:sequence>
-         <xsd:element name="federation" type="federationType" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
+        <xsd:sequence>
+            <xsd:element name="federation" type="federationType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="federationType">
@@ -48,23 +48,31 @@
 
     <xsd:complexType name="samlType">
         <xsd:annotation>
-            <xsd:documentation>Defines the SAML type. This type defines all configurations about how SAML assertions are processed and created.</xsd:documentation>
+            <xsd:documentation>Defines the SAML type. This type defines all configurations about how SAML assertions are
+                processed and created.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="clock-skew" type="xsd:int" use="optional" default="0">
             <xsd:annotation>
-                <xsd:documentation>Defines the clock skew for SAML assertions. The value must be specified in milliseconds.</xsd:documentation>
+                <xsd:documentation>Defines the clock skew for SAML assertions. The value must be specified in
+                    milliseconds.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="token-timeout" type="xsd:int" use="optional" default="5000">
             <xsd:annotation>
-                <xsd:documentation>Defines the timeout for SAML assertions. The value must be specified in milliseconds.</xsd:documentation>
+                <xsd:documentation>Defines the timeout for SAML assertions. The value must be specified in
+                    milliseconds.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
 
     <xsd:complexType name="roleGeneratorType">
         <xsd:annotation>
-            <xsd:documentation>The RoleGenerator implementation that will be used to load roles and push them to SAML assertions.</xsd:documentation>
+            <xsd:documentation>The RoleGenerator implementation that will be used to load roles and push them to SAML
+                assertions.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="class-name" type="xsd:string" use="optional">
             <xsd:annotation>
@@ -85,7 +93,9 @@
 
     <xsd:complexType name="attributeManagerType">
         <xsd:annotation>
-            <xsd:documentation>The AttributeManager implementation that will be used to load roles and push them to SAML assertions.</xsd:documentation>
+            <xsd:documentation>The AttributeManager implementation that will be used to load roles and push them to SAML
+                assertions.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="class-name" type="xsd:string" use="optional">
             <xsd:annotation>
@@ -106,7 +116,8 @@
 
     <xsd:complexType name="keyStoreType">
         <xsd:annotation>
-            <xsd:documentation>Defines the KeyStore type. This type defines how key stores are configured.</xsd:documentation>
+            <xsd:documentation>Defines the KeyStore type. This type defines how key stores are configured.
+            </xsd:documentation>
         </xsd:annotation>
         <xsd:attribute name="password" type="xsd:string" use="required">
             <xsd:annotation>
@@ -131,9 +142,9 @@
         <xsd:attribute name="relative-to" type="xsd:string" use="optional">
             <xsd:annotation>
                 <xsd:documentation>
-                One of the system-provided named paths (such as jboss.home.dir,
-                user.home, user.dir) relative to which the absolute path
-                will be calculated for the path specified in the file attribute.
+                    One of the system-provided named paths (such as jboss.home.dir,
+                    user.home, user.dir) relative to which the absolute path
+                    will be calculated for the path specified in the file attribute.
                 </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
@@ -151,7 +162,9 @@
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation>A unique name for the Identity Provider. The name must be the deployment unit name. Eg.: idp.war.</xsd:documentation>
+                <xsd:documentation>A unique name for the Identity Provider. The name must be the deployment unit name.
+                    Eg.: idp.war.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="url" type="xsd:string" use="required">
@@ -173,13 +186,15 @@
             <xsd:annotation>
                 <xsd:documentation>
                     The name of a security-domain that will be used to authenticate and authorize users.
-                    This attribute is required if the IdP is not external. See the 'external' attribute for more details.
+                    This attribute is required if the IdP is not external. See the 'external' attribute for more
+                    details.
                 </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="strict-post-binding" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
-                <xsd:documentation>Indicates if the the IDP should always respond using HTTP POST binding.</xsd:documentation>
+                <xsd:documentation>Indicates if the the IDP should always respond using HTTP POST binding.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="external" type="xsd:boolean" use="optional" default="false">
@@ -194,7 +209,9 @@
         </xsd:attribute>
         <xsd:attribute name="ssl-authentication" type="xsd:boolean" use="optional" default="false">
             <xsd:annotation>
-                <xsd:documentation>Indicates if the identity provider should also support HTTP CLIENT_CERT authentication.</xsd:documentation>
+                <xsd:documentation>Indicates if the identity provider should also support HTTP CLIENT_CERT
+                    authentication.
+                </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
@@ -204,7 +221,8 @@
             <xsd:documentation>Groups Service Provider types.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="service-provider" type="serviceProviderType" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="service-provider" type="serviceProviderType" minOccurs="1" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -222,9 +240,9 @@
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="url" type="xsd:string" use="required">
-          <xsd:annotation>
-              <xsd:documentation>URL for this Service Provider.</xsd:documentation>
-          </xsd:annotation>
+            <xsd:annotation>
+                <xsd:documentation>URL for this Service Provider.</xsd:documentation>
+            </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="post-binding" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
@@ -237,8 +255,8 @@
         <xsd:attribute name="strict-post-binding" type="xsd:boolean" use="optional" default="true">
             <xsd:annotation>
                 <xsd:documentation>Indicates which SAML Binding to use. If is true
-                HTTP POST binding will be used. Othwerwise HTTP REDIRECT binding
-                will be used.
+                    HTTP POST binding will be used. Othwerwise HTTP REDIRECT binding
+                    will be used.
                 </xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
@@ -277,7 +295,8 @@
             <xsd:documentation>Groups Trusted Domain Types.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="trust-domain" type="trustedDomainType" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+            <xsd:element name="trust-domain" type="trustedDomainType" minOccurs="1" maxOccurs="unbounded"
+                         nillable="false"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -311,8 +330,8 @@
             <xsd:documentation>Defines the Handler Type.</xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-        <xsd:element name="handler-parameter" type="handlerParameterType" minOccurs="0" maxOccurs="unbounded"
-                     nillable="true"/>
+            <xsd:element name="handler-parameter" type="handlerParameterType" minOccurs="0" maxOccurs="unbounded"
+                         nillable="true"/>
         </xsd:sequence>
         <xsd:attribute name="class-name" type="xsd:string" use="optional">
             <xsd:annotation>

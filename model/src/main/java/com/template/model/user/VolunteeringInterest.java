@@ -9,13 +9,13 @@ import java.util.UUID;
 @Entity
 @Data
 public class VolunteeringInterest {
-    @Id
-    public UUID id;
-    public String supportedNonprofits;
-    public String companyId;
-    //required
-    public String companyName;
-    //An array of enum. Enum of predefined volunteering causes:
+  @Id
+  public UUID id;
+  public String supportedNonprofits;
+  public String companyId;
+  //required
+  public String companyName;
+  //An array of enum. Enum of predefined volunteering causes:
     /*animalRights
     artsAndCulture
     children
@@ -31,7 +31,7 @@ public class VolunteeringInterest {
     scienceAndTechnology
     socialServices
     */
-    public String supportedPredefinedCauses;
-    /*An array of user inputted string. Not currently used in any LinkedIn platform's UI.*/
-    public String supportedUserDefinedCauses;
+  public String supportedPredefinedCauses;
+  /*An array of user inputted string. Not currently used in any LinkedIn platform's UI.*/
+  public String supportedUserDefinedCauses;
 }

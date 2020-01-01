@@ -47,7 +47,8 @@
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="connections" type="connections-type" minOccurs="0" maxOccurs="1"/>
-            <xsd:element name="deployment-node-selector" type="deployment-node-selector-type" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="deployment-node-selector" type="deployment-node-selector-type" minOccurs="0"
+                         maxOccurs="1"/>
             <xsd:element name="cluster-node-selector" type="cluster-node-selector-type" minOccurs="0" maxOccurs="1"/>
         </xsd:all>
     </xsd:complexType>

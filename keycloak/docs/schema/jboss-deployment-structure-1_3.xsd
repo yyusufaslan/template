@@ -76,12 +76,13 @@
                     </documentation>
                 </annotation>
             </xsd:element>
-            <xsd:element name="ear-exclusions-cascaded-to-subdeployments" type="xsd:boolean" minOccurs="0" maxOccurs="1">
+            <xsd:element name="ear-exclusions-cascaded-to-subdeployments" type="xsd:boolean" minOccurs="0"
+                         maxOccurs="1">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         Flag indicating whether .ear module exclusions should be cascaded to sub-deployments.
                         When this flag is set to true, module exclusions declared at the .ear level will be
-                        applied (casacaded) to each subdployment defined within the .ear.  This is useful in
+                        applied (casacaded) to each subdployment defined within the .ear. This is useful in
                         cases where an .ear has many subdeployments and it is desired to exclude a module
                         dependency from every subdeployment within the .ear.
                     </documentation>
@@ -176,7 +177,8 @@
             <xsd:element name="exclude-subsystems" type="exclude-subsystemsType" minOccurs="0" maxOccurs="1">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
-                        List of subsystems to be excluded. If this is specified for the top level it will be inherited by
+                        List of subsystems to be excluded. If this is specified for the top level it will be inherited
+                        by
                         sub deployments, unless the sub deployments specify their own (possibly empty) list.
                     </documentation>
                 </annotation>
@@ -760,7 +762,7 @@
             </documentation>
         </annotation>
         <xsd:sequence>
-            <ex:element name="subsystem" type="subsystemType"  minOccurs="0" maxOccurs="unbounded" />
+            <ex:element name="subsystem" type="subsystemType" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
 

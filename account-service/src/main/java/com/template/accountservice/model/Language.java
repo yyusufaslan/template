@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Language {
+public class Language extends BaseEntity {
     @Id
     public UUID id;
     //required

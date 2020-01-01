@@ -9,11 +9,11 @@ import java.util.UUID;
 @Entity
 @Data
 public class PhoneNumber {
-    @Id
-    public UUID id;
-    public String number;
-    //Enum WORK HOME MOBILE
-    public String type;
+  @Id
+  public UUID id;
+  public String number;
+  //Enum WORK HOME MOBILE
+  public String type;
 
 
 }

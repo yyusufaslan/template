@@ -28,18 +28,18 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
            version="1.0">
-   <xs:import namespace="http://java.sun.com/xml/ns/javaee"/>
+    <xs:import namespace="http://java.sun.com/xml/ns/javaee"/>
 
-   <xs:element name="security" type="securityType" substitutionGroup="javaee:assembly-descriptor-entry"/>
+    <xs:element name="security" type="securityType" substitutionGroup="javaee:assembly-descriptor-entry"/>
 
-   <xs:complexType name="securityType">
-      <xs:complexContent>
-         <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
-            <xs:sequence>
-               <xs:element name="security-domain" type="xs:string"/>
-               <xs:element name="run-as-principal" type="xs:string"/>
-            </xs:sequence>
-         </xs:extension>
-      </xs:complexContent>
-   </xs:complexType>
+    <xs:complexType name="securityType">
+        <xs:complexContent>
+            <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
+                <xs:sequence>
+                    <xs:element name="security-domain" type="xs:string"/>
+                    <xs:element name="run-as-principal" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 </xs:schema>

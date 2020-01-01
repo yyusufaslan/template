@@ -27,7 +27,7 @@
            targetNamespace="urn:jboss:cli:1.0"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-        >
+>
 
 
     <xs:element name="jboss-cli">
@@ -44,7 +44,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:element name="default-controller">
         <xs:annotation>
             <xs:documentation>
@@ -59,7 +59,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:element name="history">
         <xs:annotation>
             <xs:documentation>
@@ -75,7 +75,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
     <xs:element name="ssl">
         <xs:annotation>
             <xs:documentation>
@@ -85,10 +85,10 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="keyStore" type="xs:string" minOccurs="0" />
-                <xs:element name="keyStorePassword" type="xs:string" minOccurs="0" />
-                <xs:element name="trustStore" type="xs:string" minOccurs="0" />
-                <xs:element name="trustStorePassword" type="xs:string" minOccurs="0" />
+                <xs:element name="keyStore" type="xs:string" minOccurs="0"/>
+                <xs:element name="keyStorePassword" type="xs:string" minOccurs="0"/>
+                <xs:element name="trustStore" type="xs:string" minOccurs="0"/>
+                <xs:element name="trustStorePassword" type="xs:string" minOccurs="0"/>
                 <xs:element name="modifyTrustStore" type="xs:boolean" default="true" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>

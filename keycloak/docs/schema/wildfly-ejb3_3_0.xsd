@@ -57,8 +57,10 @@
                         minOccurs="0" maxOccurs="1"/>
             <xs:element name="default-distinct-name" type="default-distinct-nameType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="default-security-domain" type="default-security-domainType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="default-missing-method-permissions-deny-access" type="default-missing-method-permissions-deny-accessType" minOccurs="0" maxOccurs="1" />
-            <xs:element name="disable-default-ejb-permissions" type="disable-default-ejb-permissionsType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="default-missing-method-permissions-deny-access"
+                        type="default-missing-method-permissions-deny-accessType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="disable-default-ejb-permissions" type="disable-default-ejb-permissionsType" minOccurs="0"
+                        maxOccurs="1"/>
             <xs:element name="statistics" type="statisticsType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="log-system-exceptions" type="log-system-exceptionsType" minOccurs="0" maxOccurs="1"/>
         </xs:all>
@@ -145,7 +147,8 @@
         <xs:attribute name="clustered-cache-ref" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Deprecated. Not supported on current version servers; only allowed in managed domain profiles for use
+                    Deprecated. Not supported on current version servers; only allowed in managed domain profiles for
+                    use
                     on servers running earlier versions.
                 </xs:documentation>
             </xs:annotation>
@@ -153,10 +156,13 @@
         <xs:attribute name="passivation-disabled-cache-ref" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    EJB 3.2 spec allows individual stateful EJBs to declare whether they want to disable passivation for those beans.
-                    The EJB3 subsystem as a result is expected to have a passivation disabled cache factory, which it can use as a default
+                    EJB 3.2 spec allows individual stateful EJBs to declare whether they want to disable passivation for
+                    those beans.
+                    The EJB3 subsystem as a result is expected to have a passivation disabled cache factory, which it
+                    can use as a default
                     for such EJBs.
-                    This passivation-disabled-cache-ref attribute points to such a cache configuration in the EJB3 subsystem
+                    This passivation-disabled-cache-ref attribute points to such a cache configuration in the EJB3
+                    subsystem
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -288,7 +294,7 @@
             <xs:element name="data-stores" type="dataStoresType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="thread-pool-name" type="xs:token" use="required"/>
-        <xs:attribute name="default-data-store" type="xs:token" use="required" />
+        <xs:attribute name="default-data-store" type="xs:token" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="dataStoresType">
@@ -421,13 +427,13 @@
 
     <xs:complexType name="default-missing-method-permissions-deny-accessType">
         <xs:annotation>
-                   <xs:documentation>
-                       <![CDATA[
+            <xs:documentation>
+                <![CDATA[
                        If this is enabled then lack of any security metadata for an EJB method is an
                        implicit deny.
                    ]]>
-                   </xs:documentation>
-               </xs:annotation>
+            </xs:documentation>
+        </xs:annotation>
         <xs:attribute name="value" type="xs:boolean"/>
     </xs:complexType>
 

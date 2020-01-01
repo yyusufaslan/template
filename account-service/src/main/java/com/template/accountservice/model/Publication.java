@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Publication {
+public class Publication extends BaseEntity {
 
     @Id
     public UUID id;

@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Honor {
+public class Honor extends BaseEntity {
 
     @Id
     public UUID id;

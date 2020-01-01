@@ -29,20 +29,20 @@
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
            version="1.1">
-   <xs:import namespace="http://java.sun.com/xml/ns/javaee"/>
+    <xs:import namespace="http://java.sun.com/xml/ns/javaee"/>
 
-   <xs:element name="security" type="securityType" substitutionGroup="javaee:assembly-descriptor-entry"/>
+    <xs:element name="security" type="securityType" substitutionGroup="javaee:assembly-descriptor-entry"/>
 
-   <xs:complexType name="securityType">
-      <xs:complexContent>
-         <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
-            <xs:sequence>
-               <xs:element name="security-domain" type="xs:string" minOccurs="0"/>
-               <xs:element name="run-as-principal" type="xs:string" minOccurs="0"/>
-               <xs:element name="missing-method-permissions-deny-access" type="xs:boolean" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>
-                            <![CDATA[
+    <xs:complexType name="securityType">
+        <xs:complexContent>
+            <xs:extension base="javaee:jboss-assembly-descriptor-bean-entryType">
+                <xs:sequence>
+                    <xs:element name="security-domain" type="xs:string" minOccurs="0"/>
+                    <xs:element name="run-as-principal" type="xs:string" minOccurs="0"/>
+                    <xs:element name="missing-method-permissions-deny-access" type="xs:boolean" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>
+                                <![CDATA[
                                     If an EJB is secured but certain methods haven't been marked with explicit roles or @PermitAll/@DenyAll
                                     then the EJB container uses this missing-method-permissions-deny-access element to decide whether or not
                                     access is allowed to such methods.
@@ -52,11 +52,11 @@
                                     good as being marked as @PemitAll)
 
                             ]]>
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-            </xs:sequence>
-         </xs:extension>
-      </xs:complexContent>
-   </xs:complexType>
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 </xs:schema>

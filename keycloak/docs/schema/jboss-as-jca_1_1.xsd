@@ -36,7 +36,7 @@
     <xs:complexType name="subsystemType">
         <xs:sequence>
             <xs:element name="archive-validation"
-                type="archive-validationType" minOccurs="0">
+                        type="archive-validationType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         Toggle archive validation for the deployment
@@ -47,7 +47,7 @@
             </xs:element>
 
             <xs:element name="bean-validation"
-                type="bean-validationType" minOccurs="0">
+                        type="bean-validationType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         Toggle bean validation (JSR-303) for the
@@ -81,7 +81,8 @@
                 </xs:annotation>
             </xs:element>
 
-            <xs:element name="cached-connection-manager" type="cached-connection-managerType" minOccurs="0" maxOccurs="1"></xs:element>
+            <xs:element name="cached-connection-manager" type="cached-connection-managerType" minOccurs="0"
+                        maxOccurs="1"></xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -89,7 +90,7 @@
         <xs:attribute name="enabled" type="xs:boolean" default="true" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Specify whether archive validation is enabled.  Default: true
+                    Specify whether archive validation is enabled. Default: true
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -127,8 +128,8 @@
         <xs:attribute name="name" type="xs:token" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the work manager. Note, that custom work managers need
-                   to have a name defined.
+                    Specifies the name of the work manager. Note, that custom work managers need
+                    to have a name defined.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -136,7 +137,8 @@
 
     <xs:complexType name="bootstrap-contextsType">
         <xs:sequence>
-            <xs:element name="bootstrap-context" type="bootstrap-contextType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+            <xs:element name="bootstrap-context" type="bootstrap-contextType" maxOccurs="unbounded"
+                        minOccurs="1"></xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -144,14 +146,14 @@
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the bootstrap context.
+                    Specifies the name of the bootstrap context.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="workmanager" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the work manager to use for this context.
+                    Specifies the name of the work manager to use for this context.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -162,10 +164,10 @@
         <xs:attribute name="error" type="xs:boolean" use="optional"></xs:attribute>
     </xs:complexType>
 
-     <xs:complexType name="thread-pool">
+    <xs:complexType name="thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 See threads:blocking-bounded-queue-thread-pool.
             ]]>
             </xs:documentation>

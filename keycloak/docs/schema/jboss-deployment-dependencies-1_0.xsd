@@ -45,7 +45,7 @@
             </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
-            <xsd:element name="dependency" type="dependencyType" minOccurs="0" maxOccurs="unbounded" >
+            <xsd:element name="dependency" type="dependencyType" minOccurs="0" maxOccurs="unbounded">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
                         Element containing the name of the top level deployment that this deployment depends on.
@@ -56,7 +56,7 @@
 
     </xsd:complexType>
     <xsd:complexType name="dependencyType">
-        <xsd:attribute name="name" type="xsd:string" use="required" />
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
     </xsd:complexType>
 </xsd:schema>
 

@@ -42,14 +42,15 @@
         </xs:annotation>
         <xs:all>
             <xs:element name="bindings" type="bindingsType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="remote-naming" type="remote-namingType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="remote-naming" type="remote-namingType" minOccurs="0" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
     <xs:complexType name="remote-namingType">
         <xs:annotation>
             <xs:documentation>
-                This element activates the remote naming server, that allows access to items bound in the java:jboss/exported
+                This element activates the remote naming server, that allows access to items bound in the
+                java:jboss/exported
                 JNDI context.
             </xs:documentation>
         </xs:annotation>
@@ -90,7 +91,7 @@
 
     <xs:complexType name="objectFactoryType">
         <xs:sequence>
-        	<xs:element name="environment" type="environmentType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="environment" type="environmentType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
@@ -122,7 +123,7 @@
 
     <xs:complexType name="externalContextType">
         <xs:sequence>
-        	<xs:element name="environment" type="environmentType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="environment" type="environmentType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
@@ -155,32 +156,32 @@
         </xs:attribute>
     </xs:complexType>
 
-	<xs:complexType name="environmentType">
-		<xs:annotation>
-			<xs:documentation>
+    <xs:complexType name="environmentType">
+        <xs:annotation>
+            <xs:documentation>
                 <![CDATA[
                Enclosing element for a list of environment properties.
              ]]>
-			</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="property" minOccurs="0" maxOccurs="unbounded"
-				type="propertyType" />
-		</xs:sequence>
-	</xs:complexType>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="property" minOccurs="0" maxOccurs="unbounded"
+                        type="propertyType"/>
+        </xs:sequence>
+    </xs:complexType>
 
-	<xs:complexType name="propertyType">
-		<xs:annotation>
-			<xs:documentation>
+    <xs:complexType name="propertyType">
+        <xs:annotation>
+            <xs:documentation>
                 <![CDATA[
                The property element allows for the specification of name/value environment properties,
                provided to the javax.naming.spi.ObjectFactory, when retrieving object instances.
              ]]>
-			</xs:documentation>
-		</xs:annotation>
-		<xs:attribute name="name" type="xs:string" use="required" />
-		<xs:attribute name="value" type="xs:string" use="required" />
-	</xs:complexType>
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
 
     <xs:complexType name="lookupType">
         <xs:attribute name="name" type="xs:token" use="required">

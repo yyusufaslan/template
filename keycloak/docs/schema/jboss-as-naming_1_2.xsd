@@ -40,14 +40,15 @@
         </xs:annotation>
         <xs:all>
             <xs:element name="bindings" type="bindingsType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="remote-naming" type="remote-namingType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="remote-naming" type="remote-namingType" minOccurs="0" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
     <xs:complexType name="remote-namingType">
         <xs:annotation>
             <xs:documentation>
-                This element activates the remote naming server, that allows access to items bound in the java:jboss/exported
+                This element activates the remote naming server, that allows access to items bound in the
+                java:jboss/exported
                 JNDI context.
             </xs:documentation>
         </xs:annotation>

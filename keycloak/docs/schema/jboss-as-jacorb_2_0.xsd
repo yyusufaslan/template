@@ -82,7 +82,7 @@
             <xs:element name="connection" minOccurs="0" maxOccurs="1" type="orbConnectionConfigType"/>
             <xs:element name="initializers" minOccurs="0" maxOccurs="1" type="orbInitializersConfigType"/>
         </xs:sequence>
-        <xs:attribute name="persistent-server-id"  type="xs:string" use="optional" default="1"/>
+        <xs:attribute name="persistent-server-id" type="xs:string" use="optional" default="1"/>
         <xs:attribute name="name" type="xs:string" use="optional" default="JBoss"/>
         <xs:attribute name="print-version" type="onOffType" use="optional" default="off"/>
         <xs:attribute name="use-imr" type="onOffType" use="optional" default="off"/>

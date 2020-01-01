@@ -10,12 +10,12 @@ import java.util.UUID;
 @Data
 public class Locale {
 
-    @Id
-    public UUID id;
-    //An uppercase two-letter country code as defined by  ISO-3166 .
-    public String country;
-    //A lowercase two-letter language code as defined by  ISO-639 .
-    public String language;
+  @Id
+  public UUID id;
+  //An uppercase two-letter country code as defined by  ISO-3166 .
+  public String country;
+  //A lowercase two-letter language code as defined by  ISO-639 .
+  public String language;
     /*
     "locale":{
       "country":"US",

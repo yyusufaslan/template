@@ -52,9 +52,9 @@
         <xs:attribute name="instance-id" type="xs:string" use="optional"/>
         <xs:attribute name="default-security-domain" type="xs:string" use="optional" default="other"/>
         <xs:attribute name="statistics-enabled" type="xs:boolean" default="false">
-          <xs:annotation>
-            <xs:documentation>Whether statistics are to be gathered for undertow subsystem.</xs:documentation>
-          </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Whether statistics are to be gathered for undertow subsystem.</xs:documentation>
+            </xs:annotation>
         </xs:attribute>
     </xs:complexType>
     <xs:complexType name="serverType">
@@ -192,10 +192,11 @@
             <xs:element name="jsp-config" type="jsp-configurationType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="session-cookie" type="session-cookieType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="persistent-sessions" type="persistent-sessionsType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="websockets" type="websocketsType" maxOccurs="1" minOccurs="0" />
-            <xs:element name="mime-mappings" type="mime-mappingsType" maxOccurs="1" minOccurs="0" />
-            <xs:element name="welcome-files" type="welcome-filesType" maxOccurs="1" minOccurs="0" />
-            <xs:element name="crawler-session-management" type="crawler-session-managementType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="websockets" type="websocketsType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="mime-mappings" type="mime-mappingsType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="welcome-files" type="welcome-filesType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="crawler-session-management" type="crawler-session-managementType" maxOccurs="1"
+                        minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="name" use="required" type="xs:string"/>
         <xs:attribute name="allow-non-standard-wrappers" use="optional" type="xs:boolean" default="false"/>
@@ -207,10 +208,10 @@
         <xs:attribute name="eager-filter-initialization" type="xs:boolean" use="optional" default="false"/>
         <xs:attribute name="default-session-timeout" type="xs:integer" use="optional" default="30"/>
         <xs:attribute name="disable-caching-for-secured-pages" type="xs:boolean" use="optional" default="true"/>
-        <xs:attribute name="directory-listing" type="xs:boolean" use="optional" />
-        <xs:attribute name="proactive-authentication" type="xs:string" use="optional" default="false" />
-        <xs:attribute name="session-id-length" type="xs:int" use="optional" default="30" />
-        <xs:attribute name="max-sessions" type="xs:int" use="optional" />
+        <xs:attribute name="directory-listing" type="xs:boolean" use="optional"/>
+        <xs:attribute name="proactive-authentication" type="xs:string" use="optional" default="false"/>
+        <xs:attribute name="session-id-length" type="xs:int" use="optional" default="30"/>
+        <xs:attribute name="max-sessions" type="xs:int" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="mime-mappingsType">
@@ -246,8 +247,10 @@
         <xs:attribute name="default-web-module" use="optional" type="xs:string" default="ROOT.war"/>
         <xs:attribute name="default-response-code" use="optional" type="xs:int" default="404">
             <xs:annotation>
-                <xs:documentation>Default response code should be set in case server should respond with nonstandard code( other than 404 ) for unavailable resource.
-                    For instance, server behind load balancer might want to respond with 5xx code to avoid being dropped by it.
+                <xs:documentation>Default response code should be set in case server should respond with nonstandard
+                    code( other than 404 ) for unavailable resource.
+                    For instance, server behind load balancer might want to respond with 5xx code to avoid being dropped
+                    by it.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -285,7 +288,7 @@
         <xs:attribute name="java-encoding" default="UTF8" type="xs:string"/>
         <xs:attribute name="x-powered-by" default="true" type="xs:boolean"/>
         <xs:attribute name="display-source-fragment" default="true" type="xs:boolean"/>
-        <xs:attribute name="optimize-scriptlets" default="false" type="xs:string" />
+        <xs:attribute name="optimize-scriptlets" default="false" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="session-cookieType">
@@ -343,13 +346,13 @@
         <xs:attribute name="pattern" use="optional" type="xs:string" default="common"/>
         <xs:attribute name="worker" use="optional" type="xs:string" default="default"/>
         <xs:attribute name="directory" use="optional" type="xs:string" default="${jboss.server.log.dir}"/>
-        <xs:attribute name="relative-to" use="optional" type="xs:string" />
+        <xs:attribute name="relative-to" use="optional" type="xs:string"/>
         <xs:attribute name="prefix" use="optional" type="xs:string" default="access_log."/>
         <xs:attribute name="suffix" use="optional" type="xs:string" default="log"/>
         <xs:attribute name="rotate" use="optional" type="xs:string" default="true"/>
         <xs:attribute name="use-server-log" use="optional" type="xs:string" default="false"/>
-        <xs:attribute name="extended" use="optional" type="xs:string" default="false" />
-        <xs:attribute name="predicate" use="optional" type="xs:string" />
+        <xs:attribute name="extended" use="optional" type="xs:string" default="false"/>
+        <xs:attribute name="predicate" use="optional" type="xs:string"/>
     </xs:complexType>
     <xs:complexType name="errorPageType">
         <xs:attribute name="name" use="required" type="xs:string"/>
@@ -361,7 +364,6 @@
         <xs:attribute name="name" use="required" type="xs:string"/>
         <xs:attribute name="value" use="required" type="xs:string"/>
     </xs:complexType>
-
 
 
     <xs:complexType name="customFilterType">
@@ -417,7 +419,7 @@
         <xs:attribute name="scheme" use="optional" type="xs:string" default="http"/>
         <xs:attribute name="path" use="optional" type="xs:string" default=""/>
         <xs:attribute name="instance-id" use="optional" type="xs:string"/>
-        <xs:attribute name="security-realm" type="xs:string" use="optional" />
+        <xs:attribute name="security-realm" type="xs:string" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="filter-refType">
@@ -436,7 +438,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="priority" use="optional" type="xs:string" />
+        <xs:attribute name="priority" use="optional" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="singleSignOnType">
@@ -533,15 +535,15 @@
         <xs:attribute name="advertise-frequency" type="xs:int" use="optional"/>
         <xs:attribute name="health-check-interval" type="xs:int" use="optional"/>
         <xs:attribute name="broken-node-timeout" type="xs:int" use="optional"/>
-        <xs:attribute name="worker" type="xs:string" use="optional" />
+        <xs:attribute name="worker" type="xs:string" use="optional"/>
         <xs:attribute name="max-request-time" type="xs:int" use="optional"/>
         <xs:attribute name="management-access-predicate" type="xs:string" use="optional"/>
-        <xs:attribute name="connections-per-thread" type="xs:int" use="optional" />
-        <xs:attribute name="cached-connections-per-thread" type="xs:int" use="optional" />
-        <xs:attribute name="connection-idle-timeout" type="xs:int" use="optional" />
-        <xs:attribute name="request-queue-size" type="xs:int" use="optional" />
-        <xs:attribute name="security-realm" type="xs:string" use="optional" />
-        <xs:attribute name="use-alias" type="xs:string" use="optional" default="false" />
-        <xs:attribute name="enable-http2" type="xs:string" use="optional" default="false" />
+        <xs:attribute name="connections-per-thread" type="xs:int" use="optional"/>
+        <xs:attribute name="cached-connections-per-thread" type="xs:int" use="optional"/>
+        <xs:attribute name="connection-idle-timeout" type="xs:int" use="optional"/>
+        <xs:attribute name="request-queue-size" type="xs:int" use="optional"/>
+        <xs:attribute name="security-realm" type="xs:string" use="optional"/>
+        <xs:attribute name="use-alias" type="xs:string" use="optional" default="false"/>
+        <xs:attribute name="enable-http2" type="xs:string" use="optional" default="false"/>
     </xs:complexType>
 </xs:schema>

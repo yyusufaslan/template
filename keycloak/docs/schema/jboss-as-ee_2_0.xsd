@@ -25,11 +25,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:ee:2.0"
-            xmlns="urn:jboss:domain:ee:2.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="2.0">
+           targetNamespace="urn:jboss:domain:ee:2.0"
+           xmlns="urn:jboss:domain:ee:2.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="2.0">
 
     <!-- The EE subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -37,12 +37,16 @@
     <xs:complexType name="subsystem">
         <xs:sequence>
             <xs:element name="global-modules" type="modulesType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="ear-subdeployments-isolated" default="false" type="ear-subdeployments-isolatedType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="spec-descriptor-property-replacement" type="descriptor-property-replacementType" minOccurs="0" maxOccurs="1" />
-            <xs:element name="jboss-descriptor-property-replacement" type="descriptor-property-replacementType" minOccurs="0" maxOccurs="1" />
-            <xs:element name="annotation-property-replacement" type="annotation-property-replacementType" minOccurs="0" maxOccurs="1" />
-            <xs:element name="concurrent" type="concurrentType" minOccurs="0" maxOccurs="1" />
-            <xs:element name="default-bindings" type="defaultBindingsType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ear-subdeployments-isolated" default="false" type="ear-subdeployments-isolatedType"
+                        minOccurs="0" maxOccurs="1"/>
+            <xs:element name="spec-descriptor-property-replacement" type="descriptor-property-replacementType"
+                        minOccurs="0" maxOccurs="1"/>
+            <xs:element name="jboss-descriptor-property-replacement" type="descriptor-property-replacementType"
+                        minOccurs="0" maxOccurs="1"/>
+            <xs:element name="annotation-property-replacement" type="annotation-property-replacementType" minOccurs="0"
+                        maxOccurs="1"/>
+            <xs:element name="concurrent" type="concurrentType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="default-bindings" type="defaultBindingsType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -62,28 +66,28 @@
 
     <xs:simpleType name="ear-subdeployments-isolatedType">
         <xs:annotation>
-                <xs:documentation>
-                    Flag indicating whether each of the subdeployments within a .ear can access classes belonging to
-                    another subdeployment within the same .ear. Setting this to false, allows the subdeployments to
-                    see classes belonging to other subdeployments within the .ear.
-                    For example:
-                    myapp.ear
-                     |
-                     |--- web.war
-                     |
-                     |--- ejb1.jar
-                     |
-                     |--- ejb2.jar
+            <xs:documentation>
+                Flag indicating whether each of the subdeployments within a .ear can access classes belonging to
+                another subdeployment within the same .ear. Setting this to false, allows the subdeployments to
+                see classes belonging to other subdeployments within the .ear.
+                For example:
+                myapp.ear
+                |
+                |--- web.war
+                |
+                |--- ejb1.jar
+                |
+                |--- ejb2.jar
 
-                    If the ear-subdeployments-isolated is set to false, then the classes in web.war can access classes
-                    belonging to ejb1.jar and ejb2.jar. Similarly, classes from ejb1.jar can access classes from ejb2.jar
-                    (and vice-versa).
+                If the ear-subdeployments-isolated is set to false, then the classes in web.war can access classes
+                belonging to ejb1.jar and ejb2.jar. Similarly, classes from ejb1.jar can access classes from ejb2.jar
+                (and vice-versa).
 
-                    *Note that this flag, has no effect on the isolated classloader of the .war file(s). i.e. irrespective
-                    of whether this flag is set to true or false, the .war within a .ear will have a isolated classloader
-                    and other subdeployments within that .ear will not be able to access classes from that .war. This is
-                    as per spec*
-                </xs:documentation>
+                *Note that this flag, has no effect on the isolated classloader of the .war file(s). i.e. irrespective
+                of whether this flag is set to true or false, the .war within a .ear will have a isolated classloader
+                and other subdeployments within that .ear will not be able to access classes from that .war. This is
+                as per spec*
+            </xs:documentation>
         </xs:annotation>
 
         <xs:restriction base="xs:boolean"/>
@@ -131,8 +135,10 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="context-services" type="contextServicesType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="managed-executor-services" type="managedExecutorServicesType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="managed-scheduled-executor-services" type="managedScheduledExecutorServicesType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="managed-executor-services" type="managedExecutorServicesType" minOccurs="0"
+                        maxOccurs="1"/>
+            <xs:element name="managed-scheduled-executor-services" type="managedScheduledExecutorServicesType"
+                        minOccurs="0" maxOccurs="1"/>
             <xs:element name="managed-thread-factories" type="managedThreadFactoriesType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
@@ -154,7 +160,8 @@
         <xs:attribute name="use-transaction-setup-provider" type="xs:boolean" default="false">
             <xs:annotation>
                 <xs:documentation>
-                    The optional attribute that defines if the context service should use a transaction setup provider, which may be used to suspend and resume active transactions.
+                    The optional attribute that defines if the context service should use a transaction setup provider,
+                    which may be used to suspend and resume active transactions.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -192,9 +199,11 @@
         <xs:annotation>
             <xs:documentation>
                 A managed executor service (implementing javax.enterprise.concurrent.ManagedExecutorService).
-                If the "thread-factory" attribute is not defined a managed thread factory with no context service and normal thread priority will be created and used by the executor.
+                If the "thread-factory" attribute is not defined a managed thread factory with no context service and
+                normal thread priority will be created and used by the executor.
                 The task queue is based on the values of "core-threads" and "queue-length":
-                * If "queue-length" is 0, or "queue-length" is Integer.MAX_VALUE (2147483647) and "core-threads" is 0, direct handoff queuing strategy will be used and a SynchronousQueue will be created.
+                * If "queue-length" is 0, or "queue-length" is Integer.MAX_VALUE (2147483647) and "core-threads" is 0,
+                direct handoff queuing strategy will be used and a SynchronousQueue will be created.
                 * If "queue-length" is Integer.MAX_VALUE but "core-threads" is not 0, an unbounded queue will be used.
                 * For any other valid value for "queue-length", a bounded queue wil be created.
             </xs:documentation>
@@ -221,8 +230,10 @@
     <xs:complexType name="managedScheduledExecutorServiceType">
         <xs:annotation>
             <xs:documentation>
-                A managed scheduled executor service (implementing javax.enterprise.concurrent.ManagedScheduledExecutorService).
-                If the "thread-factory" attribute is not defined a managed thread factory with no context service and normal thread priority will be created and used by the executor.
+                A managed scheduled executor service (implementing
+                javax.enterprise.concurrent.ManagedScheduledExecutorService).
+                If the "thread-factory" attribute is not defined a managed thread factory with no context service and
+                normal thread priority will be created and used by the executor.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="name" type="nameType" use="required"/>
@@ -253,7 +264,7 @@
                 The name for an EE Concurrency resource.
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="nonEmptyTokenType" />
+        <xs:restriction base="nonEmptyTokenType"/>
     </xs:simpleType>
 
     <xs:simpleType name="jndiNameType">
@@ -262,7 +273,7 @@
                 The name of the entry in JNDI.
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="nonEmptyTokenType" />
+        <xs:restriction base="nonEmptyTokenType"/>
     </xs:simpleType>
 
     <xs:simpleType name="contextServiceNameType">
@@ -271,7 +282,7 @@
                 The name of the context service to be used.
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="nonEmptyTokenType" />
+        <xs:restriction base="nonEmptyTokenType"/>
     </xs:simpleType>
 
     <xs:simpleType name="threadFactoryType">
@@ -280,14 +291,16 @@
                 The name of the managed thread factory to be used by the executor.
             </xs:documentation>
         </xs:annotation>
-        <xs:restriction base="nonEmptyTokenType" />
+        <xs:restriction base="nonEmptyTokenType"/>
     </xs:simpleType>
 
     <xs:simpleType name="priorityType">
         <xs:annotation>
             <xs:documentation>
-                A priority which can range from 1 to 10 (inclusive).  See http://java.sun.com/javase/6/docs/api/java/lang/Thread.html#setPriority(int) for more information.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Priority", defined in sections 3.4.4.2
+                A priority which can range from 1 to 10 (inclusive). See
+                http://java.sun.com/javase/6/docs/api/java/lang/Thread.html#setPriority(int) for more information.
+                This type matches EE Concurrent 1.0 Final Release attribute named "Priority", defined in sections
+                3.4.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:integer">
@@ -299,8 +312,10 @@
     <xs:simpleType name="hungTaskThresholdType">
         <xs:annotation>
             <xs:documentation>
-                The amount of time in milliseconds that a task can execute before it is considered hung. If zero then tasks are never considered hung.
-                This xml attribute matches EE Concurrent 1.0 Final Release attribute named "Hung Task Threshold", defined in sections 3.1.4.2 and 3.2.4.2
+                The amount of time in milliseconds that a task can execute before it is considered hung. If zero then
+                tasks are never considered hung.
+                This xml attribute matches EE Concurrent 1.0 Final Release attribute named "Hung Task Threshold",
+                defined in sections 3.1.4.2 and 3.2.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:long">
@@ -311,8 +326,10 @@
     <xs:simpleType name="longRunningTasksType">
         <xs:annotation>
             <xs:documentation>
-                If the application intends to run short vs. long-running tasks they can specify to use pooled or daemon threads.
-                This xml attribute matches EE Concurrent 1.0 Final Release attribute named "Thread Use", defined in section 3.2.4.2
+                If the application intends to run short vs. long-running tasks they can specify to use pooled or daemon
+                threads.
+                This xml attribute matches EE Concurrent 1.0 Final Release attribute named "Thread Use", defined in
+                section 3.2.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:boolean"/>
@@ -322,7 +339,8 @@
         <xs:annotation>
             <xs:documentation>
                 The number of threads to keep in the executor's pool, even if they are idle.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Core Size", defined in sections 3.1.4.2 and 3.2.4.2
+                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Core Size", defined in
+                sections 3.1.4.2 and 3.2.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:int">
@@ -334,7 +352,8 @@
         <xs:annotation>
             <xs:documentation>
                 The maximum number of threads to allow in the executor's pool.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Maximum Size", defined in section 3.1.4.2
+                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Maximum Size", defined in
+                section 3.1.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:int">
@@ -346,7 +365,8 @@
         <xs:annotation>
             <xs:documentation>
                 The time to allow threads to remain idle when the number of threads is greater than the core size.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Keep Alive", defined in sections 3.1.4.2 and 3.2.4.2
+                This type matches EE Concurrent 1.0 Final Release attribute named "Pool Info: Keep Alive", defined in
+                sections 3.1.4.2 and 3.2.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:long">
@@ -358,7 +378,8 @@
         <xs:annotation>
             <xs:documentation>
                 The number of tasks that can be stored in the input queue. Zero means the queue capacity is not limited.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Work Queue Capacity", defined in section 3.1.4.2
+                This type matches EE Concurrent 1.0 Final Release attribute named "Work Queue Capacity", defined in
+                section 3.1.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:int">
@@ -370,7 +391,8 @@
         <xs:annotation>
             <xs:documentation>
                 The policy to use when a task is to be rejected by the executor.
-                This type matches EE Concurrent 1.0 Final Release attribute named "Reject Policy", defined in sections 3.1.4.2 and 3.2.4.2
+                This type matches EE Concurrent 1.0 Final Release attribute named "Reject Policy", defined in sections
+                3.1.4.2 and 3.2.4.2
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:token">
@@ -395,12 +417,19 @@
         <xs:annotation>
             <xs:documentation>
                 The JNDI names for the default resources on EE components/modules JNDI contexts.
-                The optional context-service attribute defines the JNDI name of the EE Concurrency ContextService that should be bound at java:comp/DefaultContextService.
-                The optional datasource attribute defines the JNDI name of the SQL DataSource that should be bound at java:comp/DefaultDataSource.
-                The optional jms-connection-factory attribute defines the JNDI name of the JMS ConnectionFactory that should be bound at java:comp/DefaultJMSConnectionFactory.
-                The optional managed-executor-service attribute defines the JNDI name of the EE Concurrency ManagedExecutorService that should be bound at java:comp/DefaultManagedExecutorService.
-                The optional managed-scheduled-executor-service attribute defines the JNDI name of the EE Concurrency ManagedScheduledExecutorService that should be bound at java:comp/DefaultManagedScheduledExecutorService.
-                The optional managed-thread-factory attribute defines the JNDI name of the EE Concurrency ManagedThreadFactory that should be bound at java:comp/DefaultManagedThreadFactory.
+                The optional context-service attribute defines the JNDI name of the EE Concurrency ContextService that
+                should be bound at java:comp/DefaultContextService.
+                The optional datasource attribute defines the JNDI name of the SQL DataSource that should be bound at
+                java:comp/DefaultDataSource.
+                The optional jms-connection-factory attribute defines the JNDI name of the JMS ConnectionFactory that
+                should be bound at java:comp/DefaultJMSConnectionFactory.
+                The optional managed-executor-service attribute defines the JNDI name of the EE Concurrency
+                ManagedExecutorService that should be bound at java:comp/DefaultManagedExecutorService.
+                The optional managed-scheduled-executor-service attribute defines the JNDI name of the EE Concurrency
+                ManagedScheduledExecutorService that should be bound at
+                java:comp/DefaultManagedScheduledExecutorService.
+                The optional managed-thread-factory attribute defines the JNDI name of the EE Concurrency
+                ManagedThreadFactory that should be bound at java:comp/DefaultManagedThreadFactory.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="context-service" type="jndiNameType"/>

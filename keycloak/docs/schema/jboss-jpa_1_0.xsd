@@ -22,47 +22,47 @@
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
 
-  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  targetNamespace="urn:jboss:jboss-jpa:1.0"     
-  xmlns="urn:jboss:jboss-jpa:1.0"
-  elementFormDefault="qualified"
-  attributeFormDefault="unqualified" 
-  version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:jboss:jboss-jpa:1.0"
+           xmlns="urn:jboss:jboss-jpa:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
-  <!-- jboss-jpa may be in a jboss-all.xml deployment descriptor to choose between 
-       deep/shallow extended persistence inheritance.
-  -->  
-  
-  <!-- example of using shallow inheritance 
-      <jboss>
-       <jboss-jpa xmlns="http://www.jboss.com/xml/ns/javaee">
-       <extended-persistence inheritance="SHALLOW"/>
-       </jboss-jpa>
-      </jboss>
-  -->
-  
-  <!-- example of using deep inheritance 
-      <jboss>
-       <jboss-jpa xmlns="http://www.jboss.com/xml/ns/javaee">
-       <extended-persistence inheritance="DEEP"/>
-       </jboss-jpa>
-      </jboss>
-  -->
-  
-  <!-- Root element -->  
-  
-  <xs:element name="jboss-jpa" type="jboss-jpa-type"/>
-  <xs:complexType name="jboss-jpa-type">
-    <xs:all>
-      <xs:element name="extended-persistence" type="extended-persistence-type" minOccurs="0" maxOccurs="1"/>
-    </xs:all>
-  </xs:complexType>
+    <!-- jboss-jpa may be in a jboss-all.xml deployment descriptor to choose between
+         deep/shallow extended persistence inheritance.
+    -->
 
-  <xs:complexType name="extended-persistence-type">
-    <xs:attribute name="inheritance" type="extended-persistence-inheritance-type" default="DEEP" use="optional">
-      <xs:annotation>
-          <xs:documentation>
-            <![CDATA[[
+    <!-- example of using shallow inheritance
+        <jboss>
+         <jboss-jpa xmlns="http://www.jboss.com/xml/ns/javaee">
+         <extended-persistence inheritance="SHALLOW"/>
+         </jboss-jpa>
+        </jboss>
+    -->
+
+    <!-- example of using deep inheritance
+        <jboss>
+         <jboss-jpa xmlns="http://www.jboss.com/xml/ns/javaee">
+         <extended-persistence inheritance="DEEP"/>
+         </jboss-jpa>
+        </jboss>
+    -->
+
+    <!-- Root element -->
+
+    <xs:element name="jboss-jpa" type="jboss-jpa-type"/>
+    <xs:complexType name="jboss-jpa-type">
+        <xs:all>
+            <xs:element name="extended-persistence" type="extended-persistence-type" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="extended-persistence-type">
+        <xs:attribute name="inheritance" type="extended-persistence-inheritance-type" default="DEEP" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    <![CDATA[[
               Controls how JPA extended persistence context (XPC) inheritance is performed.  
               XPC inheritance only occurs between stateful session beans used within the same EJB3 thread.
               This might be a stateful bean that injects other stateful beans (directly or via JNDI lookup).
@@ -77,17 +77,17 @@
               will have isolated persistence contexts (assuming the parent bean doesn't have an extended persistence 
               context).
              ]]>
-          </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
 
-  <xs:simpleType name="extended-persistence-inheritance-type">
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="DEEP" />
-      <xs:enumeration value="SHALLOW" />
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:simpleType name="extended-persistence-inheritance-type">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="DEEP"/>
+            <xs:enumeration value="SHALLOW"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
 

@@ -39,6 +39,6 @@
                 The configuration of the bean-validation subsystem.
             ]]>
             </xs:documentation>
-        </xs:annotation>        
+        </xs:annotation>
     </xs:complexType>
 </xs:schema>

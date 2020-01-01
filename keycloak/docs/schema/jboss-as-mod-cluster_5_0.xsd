@@ -34,8 +34,10 @@
             <xs:element name="proxy" type="proxy" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
-                        Proxy resource coupled with single Undertow listener (and server) specifying load balancer discovery,
-                        its configuration and load balance factor provider. Multiple proxy configuration can be specified.
+                        Proxy resource coupled with single Undertow listener (and server) specifying load balancer
+                        discovery,
+                        its configuration and load balance factor provider. Multiple proxy configuration can be
+                        specified.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -55,7 +57,8 @@
                 <xs:element name="dynamic-load-provider" type="dynamic-load-provider">
                     <xs:annotation>
                         <xs:documentation>
-                            Dynamic load provider computes the load balance factor of a node from a defined set of load metrics.
+                            Dynamic load provider computes the load balance factor of a node from a defined set of load
+                            metrics.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:element>
@@ -99,7 +102,8 @@
         <xs:attribute name="auto-enable-contexts" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    If false, the contexts are registered with the reverse proxy as disabled; they need to be enabled manually
+                    If false, the contexts are registered with the reverse proxy as disabled; they need to be enabled
+                    manually
                     by 'enable-context' operation or via mod_cluster_manager console (if available).
                 </xs:documentation>
             </xs:annotation>
@@ -182,7 +186,8 @@
         <xs:attribute name="proxy-list" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Deprecated in favor of proxies (list of references to outbound-socket-binding). List of reverse proxies to
+                    Deprecated in favor of proxies (list of references to outbound-socket-binding). List of reverse
+                    proxies to
                     register with. Format (hostname:port) separated with commas.
                 </xs:documentation>
             </xs:annotation>
@@ -232,14 +237,16 @@
         <xs:attribute name="sticky-session" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Indicates whether subsequent requests for a given session should be routed to the same node, if possible.
+                    Indicates whether subsequent requests for a given session should be routed to the same node, if
+                    possible.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="sticky-session-force" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Indicates whether the reverse proxy should run an error in the event that the balancer is unable to route a
+                    Indicates whether the reverse proxy should run an error in the event that the balancer is unable to
+                    route a
                     request to the node to which it is stuck. Ignored if sticky sessions are disabled.
                 </xs:documentation>
             </xs:annotation>
@@ -247,7 +254,8 @@
         <xs:attribute name="sticky-session-remove" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Indicates whether the reverse proxy should remove session stickiness in the event that the balancer is
+                    Indicates whether the reverse proxy should remove session stickiness in the event that the balancer
+                    is
                     unable to route a request to the node to which it is stuck. Ignored if sticky sessions are disabled.
                 </xs:documentation>
             </xs:annotation>
@@ -290,7 +298,8 @@
             <xs:element name="load-metric" type="load-metric">
                 <xs:annotation>
                     <xs:documentation>
-                        Built-in load metric contributing a value to the overall load factor of a node. The load factors from
+                        Built-in load metric contributing a value to the overall load factor of a node. The load factors
+                        from
                         each metric are aggregated according to their weights.
                     </xs:documentation>
                 </xs:annotation>
@@ -298,7 +307,8 @@
             <xs:element name="custom-load-metric" type="custom-load-metric">
                 <xs:annotation>
                     <xs:documentation>
-                        Custom load metric loaded from a specified Java class contributing a value to the overall load factor of
+                        Custom load metric loaded from a specified Java class contributing a value to the overall load
+                        factor of
                         a node. The load factors from each metric are aggregated according to their weights.
                     </xs:documentation>
                 </xs:annotation>
@@ -321,7 +331,8 @@
         <xs:attribute name="initial-load" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Initial load within the range [0..100] with which to prepopulate historical values. Used to gradually drive
+                    Initial load within the range [0..100] with which to prepopulate historical values. Used to
+                    gradually drive
                     load to the node. Value of 0 prepopulates with full load and value of -1 disables this behavior.
                 </xs:documentation>
             </xs:annotation>
@@ -341,7 +352,8 @@
         <xs:attribute name="weight" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Number indicating the significance of a metric with respect to the other metrics. For example, a metric of
+                    Number indicating the significance of a metric with respect to the other metrics. For example, a
+                    metric of
                     weight 2 will have twice the impact on the overall load factor than a metric of weight 1.
                 </xs:documentation>
             </xs:annotation>
@@ -349,7 +361,8 @@
         <xs:attribute name="capacity" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Maximum capacity of the metric used to normalize the load values from a metric which require explicit
+                    Maximum capacity of the metric used to normalize the load values from a metric which require
+                    explicit
                     capacity.
                 </xs:documentation>
             </xs:annotation>
@@ -438,7 +451,8 @@
             <xs:enumeration value="receive-traffic">
                 <xs:annotation>
                     <xs:documentation>
-                        Returns the incoming request POST traffic in KB per second (the application needs to read POST data).
+                        Returns the incoming request POST traffic in KB per second (the application needs to read POST
+                        data).
                         Requires an explicit capacity.
                     </xs:documentation>
                 </xs:annotation>
@@ -446,7 +460,8 @@
             <xs:enumeration value="busyness">
                 <xs:annotation>
                     <xs:documentation>
-                        Returns the number of currently busy listener threads servicing requests. Requires an explicit capacity.
+                        Returns the number of currently busy listener threads servicing requests. Requires an explicit
+                        capacity.
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>

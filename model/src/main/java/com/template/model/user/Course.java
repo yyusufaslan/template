@@ -12,11 +12,11 @@ import java.util.UUID;
 @Data
 public class Course {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public UUID id;
-    public String name;
-    public String number;
-    public String occupation;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  public UUID id;
+  public String name;
+  public String number;
+  public String occupation;
 
 }

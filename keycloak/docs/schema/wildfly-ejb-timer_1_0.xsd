@@ -88,11 +88,11 @@
         <xs:sequence>
             <xs:element name="parameter" type="parameterType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="declaring-class" type="xs:string" use="required" />
-        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="declaring-class" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="parameterType">
-        <xs:attribute name="type" type="xs:string" use="required" />
+        <xs:attribute name="type" type="xs:string" use="required"/>
     </xs:complexType>
 </xs:schema>

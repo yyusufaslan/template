@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class TestScore {
+public class TestScore extends BaseEntity {
     @Id
     public UUID id;
     public Date date;

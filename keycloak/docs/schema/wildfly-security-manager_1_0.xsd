@@ -41,7 +41,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="deployment-permissions" minOccurs="0" maxOccurs="1" type="deploymentPermissionsConfigType"/>
+            <xs:element name="deployment-permissions" minOccurs="0" maxOccurs="1"
+                        type="deploymentPermissionsConfigType"/>
         </xs:sequence>
     </xs:complexType>
 

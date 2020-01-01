@@ -88,7 +88,7 @@
         <xs:attribute name="cluster" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Defines the cluster name of this channel.  If undefined, the channel name will be used.
+                    Defines the cluster name of this channel. If undefined, the channel name will be used.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -108,7 +108,8 @@
         <xs:sequence>
             <xs:element name="protocol" type="tns:protocol" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>Defines a protocol to add to the protocol stack of this fork channel.</xs:documentation>
+                    <xs:documentation>Defines a protocol to add to the protocol stack of this fork channel.
+                    </xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
@@ -188,7 +189,9 @@
         </xs:attribute>
         <xs:attribute name="statistics-enabled" type="xs:boolean" default="false">
             <xs:annotation>
-                <xs:documentation>Indicates whether or not all protocols in the stack will collect statistics by default.</xs:documentation>
+                <xs:documentation>Indicates whether or not all protocols in the stack will collect statistics by
+                    default.
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -213,7 +216,9 @@
         </xs:attribute>
         <xs:attribute name="statistics-enabled" type="xs:boolean">
             <xs:annotation>
-                <xs:documentation>Indicates whether or not this protocol will collect statistics overriding stack configuration.</xs:documentation>
+                <xs:documentation>Indicates whether or not this protocol will collect statistics overriding stack
+                    configuration.
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -223,7 +228,9 @@
             <xs:extension base="tns:generic-protocol">
                 <xs:attribute name="socket-binding" type="xs:string">
                     <xs:annotation>
-                        <xs:documentation>Deprecated.  Socket-based protocols should use &lt;socket-protocol/&gt; instead.</xs:documentation>
+                        <xs:documentation>Deprecated. Socket-based protocols should use &lt;socket-protocol/&gt;
+                            instead.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -259,7 +266,9 @@
             <xs:extension base="tns:generic-protocol">
                 <xs:attribute name="data-source" type="xs:string" use="required">
                     <xs:annotation>
-                        <xs:documentation>Data source reference for JDBC protocols to be used instead of connection and JNDI lookup properties.</xs:documentation>
+                        <xs:documentation>Data source reference for JDBC protocols to be used instead of connection and
+                            JNDI lookup properties.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -272,13 +281,15 @@
                 <xs:sequence>
                     <xs:element name="key-credential-reference" type="tns:credential-reference">
                         <xs:annotation>
-                            <xs:documentation>References the password credential with which the key is protected.</xs:documentation>
+                            <xs:documentation>References the password credential with which the key is protected.
+                            </xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
                 <xs:attribute name="key-store" type="xs:string" use="required">
                     <xs:annotation>
-                        <xs:documentation>References key store containing the key used to encrypt messages.</xs:documentation>
+                        <xs:documentation>References key store containing the key used to encrypt messages.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="key-alias" type="xs:string" use="required">
@@ -329,7 +340,8 @@
             <xs:extension base="tns:plain-token">
                 <xs:attribute name="algorithm" type="xs:string" default="SHA-265">
                     <xs:annotation>
-                        <xs:documentation>The digest algorithm with which to obfuscate the shared secret.</xs:documentation>
+                        <xs:documentation>The digest algorithm with which to obfuscate the shared secret.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -342,23 +354,31 @@
                 <xs:sequence>
                     <xs:element name="key-credential-reference" type="tns:credential-reference">
                         <xs:annotation>
-                            <xs:documentation>References the credential required to obtain the specified key from the specified store.</xs:documentation>
+                            <xs:documentation>References the credential required to obtain the specified key from the
+                                specified store.
+                            </xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
                 <xs:attribute name="key-store" type="xs:string" use="required">
                     <xs:annotation>
-                        <xs:documentation>References key store containing the private key and certificate used to authenticate new members.</xs:documentation>
+                        <xs:documentation>References key store containing the private key and certificate used to
+                            authenticate new members.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="key-alias" type="xs:string" use="required">
                     <xs:annotation>
-                        <xs:documentation>The alias of the private key and certificate used to authenticate new members.</xs:documentation>
+                        <xs:documentation>The alias of the private key and certificate used to authenticate new
+                            members.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="algorithm" type="xs:string" default="RSA">
                     <xs:annotation>
-                        <xs:documentation>The encryption algorithm/transformation used to protect the shared secret during transmission.</xs:documentation>
+                        <xs:documentation>The encryption algorithm/transformation used to protect the shared secret
+                            during transmission.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
@@ -406,28 +426,37 @@
                 <xs:sequence>
                     <xs:element name="default-thread-pool" type="tns:thread-pool" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
-                            <xs:documentation>Defines the thread pool used for default messages received by this transport.</xs:documentation>
+                            <xs:documentation>Defines the thread pool used for default messages received by this
+                                transport.
+                            </xs:documentation>
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
                 <xs:attribute name="shared" type="xs:boolean" default="true">
                     <xs:annotation>
-                        <xs:documentation>Indicates whether or not the channels created for this stack should use a single, shared transport.</xs:documentation>
+                        <xs:documentation>Indicates whether or not the channels created for this stack should use a
+                            single, shared transport.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="diagnostics-socket-binding" type="xs:string">
                     <xs:annotation>
-                        <xs:documentation>If specified, enables diagnostics and specified the multicast address/port on which to communicate.</xs:documentation>
+                        <xs:documentation>If specified, enables diagnostics and specified the multicast address/port on
+                            which to communicate.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="default-executor" type="xs:string">
                     <xs:annotation>
-                        <xs:documentation>Defines the thread pool used for default messages received by this transport.</xs:documentation>
+                        <xs:documentation>Defines the thread pool used for default messages received by this
+                            transport.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="oob-executor" type="xs:string">
                     <xs:annotation>
-                        <xs:documentation>Defines the thread pool used for OOB messages received by this transport.</xs:documentation>
+                        <xs:documentation>Defines the thread pool used for OOB messages received by this transport.
+                        </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
                 <xs:attribute name="timer-executor" type="xs:string">

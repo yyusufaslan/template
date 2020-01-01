@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Address {
+public class Address extends BaseEntity {
 
     @Id
     public UUID id;

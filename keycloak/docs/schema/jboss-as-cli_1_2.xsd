@@ -27,7 +27,7 @@
            targetNamespace="urn:jboss:cli:1.2"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-        >
+>
 
 
     <xs:element name="jboss-cli">
@@ -42,7 +42,8 @@
                 <xs:element ref="validate-operation-requests" minOccurs="0"/>
                 <xs:element ref="history" minOccurs="0"/>
 
-                <xs:element name="resolve-parameter-values" type="xs:boolean" minOccurs="0" maxOccurs="1" default="false">
+                <xs:element name="resolve-parameter-values" type="xs:boolean" minOccurs="0" maxOccurs="1"
+                            default="false">
                     <xs:annotation>
                         <xs:documentation>
                             Whether to resolve system properties specified as command argument (or operation parameter)
@@ -119,12 +120,12 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="key-store" type="xs:string" minOccurs="0" />
-                <xs:element name="key-store-password" type="xs:string" minOccurs="0" />
-                <xs:element name="alias" type="xs:string" minOccurs="0" />
-                <xs:element name="key-password" type="xs:string" minOccurs="0" />
-                <xs:element name="trust-store" type="xs:string" minOccurs="0" />
-                <xs:element name="trust-store-password" type="xs:string" minOccurs="0" />
+                <xs:element name="key-store" type="xs:string" minOccurs="0"/>
+                <xs:element name="key-store-password" type="xs:string" minOccurs="0"/>
+                <xs:element name="alias" type="xs:string" minOccurs="0"/>
+                <xs:element name="key-password" type="xs:string" minOccurs="0"/>
+                <xs:element name="trust-store" type="xs:string" minOccurs="0"/>
+                <xs:element name="trust-store-password" type="xs:string" minOccurs="0"/>
                 <xs:element name="modify-trust-store" type="xs:boolean" default="true" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>

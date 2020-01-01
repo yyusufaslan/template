@@ -1,4 +1,5 @@
 package com.template.model.user;
+
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -9,10 +10,10 @@ import java.util.UUID;
 @Data
 public class Address {
 
-    @Id
-    public UUID id;
-    public String localized;
-    public String preferredLocale;
+  @Id
+  public UUID id;
+  public String localized;
+  public String preferredLocale;
 
 /*
    "address":{

@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:remoting:1.1"
-            xmlns="urn:jboss:domain:remoting:1.1"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.1">
+           targetNamespace="urn:jboss:domain:remoting:1.1"
+           xmlns="urn:jboss:domain:remoting:1.1"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.1">
 
     <!-- The remoting subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the Remoting subsystem.
 
                 The 'worker-thread-pool' element configures the worker thread pool.
@@ -46,14 +46,14 @@
         <xs:sequence>
             <xs:element name="worker-thread-pool" type="workerThreadsType" minOccurs="0"/>
             <xs:element name="connector" type="connector" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="outbound-connections" minOccurs="0" type="outbound-connectionsType" />
+            <xs:element name="outbound-connections" minOccurs="0" type="outbound-connectionsType"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="workerThreadsType">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the worker thread pool.
 
                 The attributes correspond to the following xnio options:
@@ -72,7 +72,7 @@
     <xs:complexType name="connector">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of a Remoting connector.
 
                 The "name" attribute specifies the unique name of this connector.
@@ -99,7 +99,7 @@
     <xs:complexType name="sasl">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the SASL authentication layer for this server.
 
                 The optional nested "include-mechanisms" element contains a whitelist of allowed SASL mechanism names.
@@ -137,7 +137,7 @@
     <xs:complexType name="policy">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 Policy criteria items to use in order to choose a SASL mechanism.
 
                 The optional nested "forward-secrecy" element contains a boolean value which specifies whether mechanisms
@@ -174,7 +174,7 @@
     <xs:complexType name="boolean-element">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 An element specifying a boolean value.
             ]]>
             </xs:documentation>
@@ -185,7 +185,7 @@
     <xs:complexType name="name-listType">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 An element specifying a string list.
             ]]>
             </xs:documentation>
@@ -196,7 +196,7 @@
     <xs:simpleType name="name-list">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A set of string items.
             ]]>
             </xs:documentation>
@@ -207,7 +207,7 @@
     <xs:complexType name="qop-listType">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 An element specifying a qop list.
             ]]>
             </xs:documentation>
@@ -218,7 +218,7 @@
     <xs:simpleType name="qop-list">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The SASL quality-of-protection value list.  See http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/api/javax/security/sasl/Sasl.html#QOP
                 for more information.
             ]]>
@@ -238,7 +238,7 @@
     <xs:simpleType name="strength">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The SASL strength value list.  See http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/api/javax/security/sasl/Sasl.html#STRENGTH
                 for more information.
             ]]>
@@ -258,7 +258,7 @@
     <xs:complexType name="properties">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A set of free-form properties.
             ]]>
             </xs:documentation>
@@ -271,7 +271,7 @@
     <xs:complexType name="property">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A free-form property.  The name is required; the value is optional.
             ]]>
             </xs:documentation>
@@ -283,7 +283,7 @@
     <xs:complexType name="ref">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A reference to another named service.
             ]]>
             </xs:documentation>
@@ -293,9 +293,9 @@
 
     <xs:complexType name="outbound-connectionsType">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="local-outbound-connection" type="local-outbound-connectionType" />
-            <xs:element name="remote-outbound-connection" type="remote-outbound-connectionType" />
-            <xs:element name="outbound-connection" type="outbound-connectionType" />
+            <xs:element name="local-outbound-connection" type="local-outbound-connectionType"/>
+            <xs:element name="remote-outbound-connection" type="remote-outbound-connectionType"/>
+            <xs:element name="outbound-connection" type="outbound-connectionType"/>
         </xs:choice>
     </xs:complexType>
 

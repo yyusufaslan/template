@@ -36,7 +36,7 @@
     <xs:complexType name="subsystemType">
         <xs:sequence>
             <xs:element name="archive-validation"
-                type="archive-validationType" minOccurs="0">
+                        type="archive-validationType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         Toggle archive validation for the deployment
@@ -47,7 +47,7 @@
             </xs:element>
 
             <xs:element name="bean-validation"
-                type="bean-validationType" minOccurs="0">
+                        type="bean-validationType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
                         Toggle bean validation (JSR-303) for the
@@ -86,22 +86,23 @@
 
             <xs:element name="distributed-workmanager" type="distributedWorkmanagerType" minOccurs="0"
                         maxOccurs="unbounded">
-              <xs:annotation>
-                <xs:documentation>
-                  A distributed work manager definition and its thread pools
-                </xs:documentation>
-              </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>
+                        A distributed work manager definition and its thread pools
+                    </xs:documentation>
+                </xs:annotation>
             </xs:element>
 
             <xs:element name="bootstrap-contexts" type="bootstrap-contextsType" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation>
-                  Definition of custom bootstrap contexts
-                </xs:documentation>
-              </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>
+                        Definition of custom bootstrap contexts
+                    </xs:documentation>
+                </xs:annotation>
             </xs:element>
 
-            <xs:element name="cached-connection-manager" type="cached-connection-managerType" minOccurs="0" maxOccurs="1"></xs:element>
+            <xs:element name="cached-connection-manager" type="cached-connection-managerType" minOccurs="0"
+                        maxOccurs="1"></xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -109,7 +110,7 @@
         <xs:attribute name="enabled" type="xs:boolean" default="true" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Specify whether archive validation is enabled.  Default: true
+                    Specify whether archive validation is enabled. Default: true
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -192,67 +193,70 @@
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the work manager.
+                    Specifies the name of the work manager.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
 
-  <xs:complexType name="distributedWorkmanagerType">
-          <xs:all>
-              <xs:element name="short-running-threads" type="thread-pool" maxOccurs="1" minOccurs="1">
-                  <xs:annotation>
-                      <xs:documentation>
-                          Thread pool for short running jobs.
-                          Long running jobs are identified by the HintsContext.LONGRUNNING_HINT with a value of true.
-                      </xs:documentation>
-                  </xs:annotation>
-              </xs:element>
-              <xs:element name="long-running-threads" type="thread-pool" maxOccurs="1" minOccurs="0">
-                  <xs:annotation>
-                      <xs:documentation>
-                          Thread pool for long running jobs.
-                          Long running jobs are identified by the HintsContext.LONGRUNNING_HINT with a value of true.
-                      </xs:documentation>
-                  </xs:annotation>
-              </xs:element>
-              <xs:element name="policy" type="policyType" maxOccurs="1" minOccurs="0" />
-              <xs:element name="selector" type="selectorType" maxOccurs="1" minOccurs="0" />
-          </xs:all>
-          <xs:attribute name="name" type="xs:token" use="required">
-              <xs:annotation>
-                  <xs:documentation>
-                     Specifies the name of the work manager. Note, that custom work managers need
-                     to have a name defined.
-                  </xs:documentation>
-              </xs:annotation>
-          </xs:attribute>
-      </xs:complexType>
+    <xs:complexType name="distributedWorkmanagerType">
+        <xs:all>
+            <xs:element name="short-running-threads" type="thread-pool" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Thread pool for short running jobs.
+                        Long running jobs are identified by the HintsContext.LONGRUNNING_HINT with a value of true.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="long-running-threads" type="thread-pool" maxOccurs="1" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Thread pool for long running jobs.
+                        Long running jobs are identified by the HintsContext.LONGRUNNING_HINT with a value of true.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="policy" type="policyType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="selector" type="selectorType" maxOccurs="1" minOccurs="0"/>
+        </xs:all>
+        <xs:attribute name="name" type="xs:token" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Specifies the name of the work manager. Note, that custom work managers need
+                    to have a name defined.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
 
     <xs:complexType name="bootstrap-contextsType">
         <xs:sequence>
-            <xs:element name="bootstrap-context" type="bootstrap-contextType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+            <xs:element name="bootstrap-context" type="bootstrap-contextType" maxOccurs="unbounded"
+                        minOccurs="1"></xs:element>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="bootstrap-contextType">
         <xs:annotation>
             <xs:documentation>
-                This provides a mechanism to pass a bootstrap context to a resource adapter instance when it is bootstrapped.
-                The bootstrap context contains references to useful facilities that could be used by the resource adapter instance.
+                This provides a mechanism to pass a bootstrap context to a resource adapter instance when it is
+                bootstrapped.
+                The bootstrap context contains references to useful facilities that could be used by the resource
+                adapter instance.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the bootstrap context.
+                    Specifies the name of the bootstrap context.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="workmanager" type="xs:token" use="required">
             <xs:annotation>
                 <xs:documentation>
-                   Specifies the name of the work manager to use for this context.
+                    Specifies the name of the work manager to use for this context.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -282,10 +286,10 @@
         </xs:attribute>
     </xs:complexType>
 
-     <xs:complexType name="thread-pool">
+    <xs:complexType name="thread-pool">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 See threads:blocking-bounded-queue-thread-pool.
             ]]>
             </xs:documentation>
@@ -302,71 +306,71 @@
 
     <xs:complexType name="policyType">
         <xs:sequence>
-          <xs:element name="option" type="optionType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="option" type="optionType" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="name" use="required">
-                <xs:annotation>
-                    <xs:documentation>
-                        When to distribute the work instance
-                        Supported policies
-                        - NEVER
-                        Never distribute the Work instance to another node.
-                        - ALWAYS
-                        Always distribute the Work instance to another node.
-                        - WATERMARK
-                        Distribute the Work instance to another node based on how many free worker threads the current
-                        node has available.
+            <xs:annotation>
+                <xs:documentation>
+                    When to distribute the work instance
+                    Supported policies
+                    - NEVER
+                    Never distribute the Work instance to another node.
+                    - ALWAYS
+                    Always distribute the Work instance to another node.
+                    - WATERMARK
+                    Distribute the Work instance to another node based on how many free worker threads the current
+                    node has available.
 
-                        Default is WATERMARK with a watermark of 0
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="xs:token">
-                        <xs:enumeration value="NEVER"/>
-                        <xs:enumeration value="ALWAYS"/>
-                        <xs:enumeration value="WATERMARK"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
+                    Default is WATERMARK with a watermark of 0
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="NEVER"/>
+                    <xs:enumeration value="ALWAYS"/>
+                    <xs:enumeration value="WATERMARK"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
 
 
-      </xs:complexType>
-      <xs:complexType name="selectorType">
-          <xs:sequence>
-                  <xs:element name="option" type="optionType" maxOccurs="unbounded" minOccurs="0"/>
-          </xs:sequence>
-          <xs:attribute name="name" use="required">
-                <xs:annotation>
-                    <xs:documentation>
-                        To which work manager instance should the Work instance be distributed to
-                        Supported selectors
-                        - FIRST_AVAILABLE
-                            Select the first available node in the list
-                        - PING_TIME
-                            Select the node with the lowest ping time
-                        - MAX_FREE_THREADS
-                            Select the node with highest number of free worker threads
+    </xs:complexType>
+    <xs:complexType name="selectorType">
+        <xs:sequence>
+            <xs:element name="option" type="optionType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    To which work manager instance should the Work instance be distributed to
+                    Supported selectors
+                    - FIRST_AVAILABLE
+                    Select the first available node in the list
+                    - PING_TIME
+                    Select the node with the lowest ping time
+                    - MAX_FREE_THREADS
+                    Select the node with highest number of free worker threads
 
-                        Default is PING_TIME
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="xs:token">
-                        <xs:enumeration value="FIRST_AVAILABLE"/>
-                        <xs:enumeration value="PING_TIME"/>
-                        <xs:enumeration value="MAX_FREE_THREADS"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-        </xs:complexType>
+                    Default is PING_TIME
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="FIRST_AVAILABLE"/>
+                    <xs:enumeration value="PING_TIME"/>
+                    <xs:enumeration value="MAX_FREE_THREADS"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
 
-        <xs:complexType name="optionType">
-              <xs:attribute name="name" use="required">
-                  <xs:annotation>
-                      <xs:documentation>
-                          Name of the option to be set
-                      </xs:documentation>
-                  </xs:annotation>
-              </xs:attribute>
-          </xs:complexType>
+    <xs:complexType name="optionType">
+        <xs:attribute name="name" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Name of the option to be set
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
 </xs:schema>

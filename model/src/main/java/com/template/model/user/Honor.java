@@ -12,16 +12,14 @@ import java.util.UUID;
 @Data
 public class Honor {
 
-    @Id
-    public UUID id;
-    public Map<String,String> description;
-    public Date issueDate;
-    public String issuer;
-    public String occupation;
-    //required
-    public String title;
-
-
+  @Id
+  public UUID id;
+  public Map<String, String> description;
+  public Date issueDate;
+  public String issuer;
+  public String occupation;
+  //required
+  public String title;
 
 
 }

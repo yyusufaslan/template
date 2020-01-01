@@ -53,7 +53,8 @@
             <xs:element name="remote" type="remoteType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="thread-pools" type="threadPoolsType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="iiop" type="iiopType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="in-vm-remote-interface-invocation" type="in-vm-remote-interface-invocationType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="in-vm-remote-interface-invocation" type="in-vm-remote-interface-invocationType"
+                        minOccurs="0" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
@@ -67,7 +68,7 @@
     <xs:complexType name="entityType">
         <xs:all>
             <xs:element name="bean-instance-pool-ref" type="bean-instance-pool-refType" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="optimistic-locking" type="optimistic-lockingType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="optimistic-locking" type="optimistic-lockingType" minOccurs="0" maxOccurs="1"/>
         </xs:all>
     </xs:complexType>
 
@@ -231,7 +232,7 @@
     <xs:complexType name="threadPoolType">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 A thread pool executor with an unbounded queue.  Such a thread pool has a core size and a queue with no
                 upper bound.  When a task is submitted, if the number of running threads is less than the core size,
                 a new thread is created.  Otherwise, the task is placed in queue.  If too many tasks are allowed to be

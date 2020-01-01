@@ -165,7 +165,8 @@
             <xsd:element name="exclude-subsystems" type="exclude-subsystemsType" minOccurs="0" maxOccurs="1">
                 <annotation xmlns="http://www.w3.org/2001/XMLSchema">
                     <documentation>
-                        List of subsystems to be excluded. If this is specified for the top level it will be inherited by
+                        List of subsystems to be excluded. If this is specified for the top level it will be inherited
+                        by
                         sub deployments, unless the sub deployments specify their own (possibly empty) list.
                     </documentation>
                 </annotation>
@@ -750,7 +751,7 @@
             </documentation>
         </annotation>
         <xsd:sequence>
-            <ex:element name="subsystem" type="subsystemType"  minOccurs="0" maxOccurs="unbounded" />
+            <ex:element name="subsystem" type="subsystemType" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
 

@@ -584,7 +584,8 @@
             <xs:element name="meta-data" type="propertiesType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>
-                        Sets the meta data to use in the structured format. Properties will be added to each log message.
+                        Sets the meta data to use in the structured format. Properties will be added to each log
+                        message.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>

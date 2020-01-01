@@ -483,7 +483,8 @@
     <xs:complexType name="handlerPatternFormatterType">
         <xs:annotation>
             <xs:documentation>
-                Defines a pattern formatter.  See the documentation for org.jboss.logmanager.formatters.FormatStringParser
+                Defines a pattern formatter. See the documentation for
+                org.jboss.logmanager.formatters.FormatStringParser
                 for more information about the format string.
             </xs:documentation>
         </xs:annotation>
@@ -493,7 +494,8 @@
     <xs:complexType name="patternFormatterType">
         <xs:annotation>
             <xs:documentation>
-                Defines a pattern formatter.  See the documentation for org.jboss.logmanager.formatters.FormatStringParser
+                Defines a pattern formatter. See the documentation for
+                org.jboss.logmanager.formatters.FormatStringParser
                 for more information about the format string.
 
                 The color-map attribute allows for a comma delimited list of colors to be used for different levels. The
@@ -501,7 +503,8 @@
 
                 Valid Levels; severe, fatal, error, warn, warning, info, debug, trace, config, fine, finer, finest
 
-                Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred, brightgreen,
+                Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred,
+                brightgreen,
                 brightblue, brightyellow, brightmagenta, brightcyan, brightwhite
             </xs:documentation>
         </xs:annotation>
@@ -515,12 +518,14 @@
         <xs:attribute name="color-map" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    The color-map attribute allows for a comma delimited list of colors to be used for different levels. The
+                    The color-map attribute allows for a comma delimited list of colors to be used for different levels.
+                    The
                     format is level-name:color-name.
 
                     Valid Levels; severe, fatal, error, warn, warning, info, debug, trace, config, fine, finer, finest
 
-                    Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred, brightgreen,
+                    Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred,
+                    brightgreen,
                     brightblue, brightyellow, brightmagenta, brightcyan, brightwhite
                 </xs:documentation>
             </xs:annotation>

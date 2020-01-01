@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class ProfilePicture {
+public class ProfilePicture extends BaseEntity {
     @Id
     public UUID id;
     //An epoch timestamp corresponding to the creation of the picture. Represented in milliseconds. This field requires special permissions available only to select partners.

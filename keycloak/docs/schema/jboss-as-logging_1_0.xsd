@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:logging:1.0"
-            xmlns="urn:jboss:domain:logging:1.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+           targetNamespace="urn:jboss:domain:logging:1.0"
+           xmlns="urn:jboss:domain:logging:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
     <!-- The logging subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the logging subsystem.
             ]]>
             </xs:documentation>
@@ -180,7 +180,7 @@
         <xs:attribute name="name" type="xs:string" use="required"/>
     </xs:complexType>
 
-        <xs:complexType name="sizeFileHandlerType">
+    <xs:complexType name="sizeFileHandlerType">
         <xs:annotation>
             <xs:documentation>
                 Defines a handler which writes to a file, rotating the log after the size of the file grows beyond a
@@ -204,7 +204,7 @@
     <xs:complexType name="asyncHandlerType">
         <xs:annotation>
             <xs:documentation>
-                Defines a handler which writes to the sub-handlers in an asynchronous thread.  Used for handlers which
+                Defines a handler which writes to the sub-handlers in an asynchronous thread. Used for handlers which
                 introduce a substantial amount of lag.
             </xs:documentation>
         </xs:annotation>
@@ -279,9 +279,10 @@
     <xs:complexType name="multiFilterType">
         <xs:annotation>
             <xs:documentation>
-                Defines a composite filter type.  The "any" filter will return true of any of its constituent filters
-                returns true; the "all" filter will return false if any of its constituent filters returns false.  Both
-                composite filter types are short-circuiting, meaning that if the result can be determined with an earlier
+                Defines a composite filter type. The "any" filter will return true of any of its constituent filters
+                returns true; the "all" filter will return false if any of its constituent filters returns false. Both
+                composite filter types are short-circuiting, meaning that if the result can be determined with an
+                earlier
                 filter, later filters are not run.
             </xs:documentation>
         </xs:annotation>
@@ -306,7 +307,7 @@
     <xs:complexType name="regexFilterType">
         <xs:annotation>
             <xs:documentation>
-                A regular expression-based filter.  The filter returns true if the pattern matches.
+                A regular expression-based filter. The filter returns true if the pattern matches.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="pattern" type="xs:string" use="required"/>
@@ -315,7 +316,7 @@
     <xs:complexType name="replaceFilterType">
         <xs:annotation>
             <xs:documentation>
-                A regular expression substitution filter.  This filter modifies the log message and always returns true.
+                A regular expression substitution filter. This filter modifies the log message and always returns true.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="pattern" type="xs:string" use="required"/>
@@ -326,7 +327,7 @@
     <xs:complexType name="levelFilterType">
         <xs:annotation>
             <xs:documentation>
-                A level filter.  This filter returns true if the log message level matches the parameter.  It is a
+                A level filter. This filter returns true if the log message level matches the parameter. It is a
                 numerical match; two differently-named levels with the same numeric value will be considered equal.
             </xs:documentation>
         </xs:annotation>
@@ -336,8 +337,8 @@
     <xs:complexType name="levelRangeFilterType">
         <xs:annotation>
             <xs:documentation>
-                A level range filter.  This filter returns true if the log message level matches the range specified
-                by the parameters.  It is a
+                A level range filter. This filter returns true if the log message level matches the range specified
+                by the parameters. It is a
                 numerical match; two differently-named levels with the same numeric value will be considered equal.
             </xs:documentation>
         </xs:annotation>
@@ -350,7 +351,7 @@
     <xs:complexType name="levelChangeFilterType">
         <xs:annotation>
             <xs:documentation>
-                A level change filter.  This filter modifies the log message and always returns true.
+                A level change filter. This filter modifies the log message and always returns true.
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="new-level" type="xs:string" use="required"/>
@@ -372,7 +373,8 @@
     <xs:complexType name="patternFormatterType">
         <xs:annotation>
             <xs:documentation>
-                Defines a pattern formatter.  See the documentation for org.jboss.logmanager.formatters.FormatStringParser
+                Defines a pattern formatter. See the documentation for
+                org.jboss.logmanager.formatters.FormatStringParser
                 for more information about the format string.
             </xs:documentation>
         </xs:annotation>

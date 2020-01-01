@@ -14,20 +14,20 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @Data
-public class Post implements Serializable{
+public class Post implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String postBody;
+  private String postBody;
 
-    private String postImage;
+  private String postImage;
 
-    private Date postDate;
+  private Date postDate;
 
-    @ManyToOne
-    @JoinColumn(name = "post_sender_id")
-    private User postSender;
+  @ManyToOne
+  @JoinColumn(name = "post_sender_id")
+  private User postSender;
 
 }

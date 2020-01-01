@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:transactions:1.0"
-            xmlns="urn:jboss:domain:transactions:1.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+           targetNamespace="urn:jboss:domain:transactions:1.0"
+           xmlns="urn:jboss:domain:transactions:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
     <!-- The transaction subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the transactions subsystem.
             ]]>
             </xs:documentation>
@@ -51,7 +51,7 @@
     <xs:complexType name="recovery-environment">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The recovery environment configuration.
 
                 The "socket-binding" attribute is used to reference the correct socket binding to use for the
@@ -62,15 +62,15 @@
             ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="socket-binding" type="xs:string" />
-        <xs:attribute name="status-socket-binding" type="xs:string" />
+        <xs:attribute name="socket-binding" type="xs:string"/>
+        <xs:attribute name="status-socket-binding" type="xs:string"/>
         <xs:attribute name="recovery-listener" type="xs:boolean" default="false"/>
     </xs:complexType>
 
     <xs:complexType name="core-environment">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The core environment configuration.
 
                 The process-id element specifies the process id implemention.
@@ -86,7 +86,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="process-id" type="process-id" />
+            <xs:element name="process-id" type="process-id"/>
         </xs:all>
         <xs:attribute name="node-identifier" type="xs:string" default="1"/>
         <xs:attribute name="path" type="xs:string" default="var"/>
@@ -95,7 +95,7 @@
     <xs:complexType name="process-id">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The process identifer implementation
                 The "node-identifier" attribute is used to set the node identifier on the core environment.
                 The "socket-process-id-max-ports" attribute is used to set the max ports on the core environment.
@@ -103,14 +103,14 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="uuid" type="uuid" />
-            <xs:element name="socket" type="socket-id" />
+            <xs:element name="uuid" type="uuid"/>
+            <xs:element name="socket" type="socket-id"/>
         </xs:choice>
     </xs:complexType>
     <xs:complexType name="uuid">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The UUID based process identifer implementation
             ]]>
             </xs:documentation>
@@ -119,7 +119,7 @@
     <xs:complexType name="socket-id">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The socket based process identifer implementation
                 The "socket-binding" attribute is used to specify the port to bind to.
                 The "socket-process-id-max-ports" attribute is used to set the max ports on the core environment.
@@ -127,15 +127,15 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="socket-binding" type="xs:string" use="required"/>
-        <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10" />
+        <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10"/>
     </xs:complexType>
 
-    <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10" />
+    <xs:attribute name="socket-process-id-max-ports" type="xs:int" default="10"/>
 
     <xs:complexType name="coordinator-environment">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The coordinator environment configuration.
                 enable-statistics - if recording of transaction statistics is enabled, false otherwise.
                 enable-tsm-status - if the transaction status manager (TSM) service, needed for out of process recovery, should be provided or not.
@@ -145,13 +145,13 @@
         </xs:annotation>
         <xs:attribute name="enable-statistics" type="xs:boolean" default="false"/>
         <xs:attribute name="enable-tsm-status" type="xs:boolean" default="false"/>
-        <xs:attribute name="default-timeout" type="xs:int" default="300" />
+        <xs:attribute name="default-timeout" type="xs:int" default="300"/>
     </xs:complexType>
 
     <xs:complexType name="object-store">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The object store configuration.
 
                 The "path" attribute denotes a relative or absolute filesystem path denoting where the transaction
@@ -164,7 +164,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:attribute name="path" type="xs:string" default="tx-object-store"/>
-        <xs:attribute name="relative-to" type="xs:string" default="jboss.server.data.dir" />
+        <xs:attribute name="relative-to" type="xs:string" default="jboss.server.data.dir"/>
     </xs:complexType>
 
 </xs:schema>

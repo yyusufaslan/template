@@ -12,12 +12,12 @@ import java.util.UUID;
 @Data
 public class Organization {
 
-    @Id
-    public UUID id;
-    public String description;
-    public Date endMonthYear;
-    public String name;
-    public String occupation;
-    public String position;
-    public Date startMonthYear;
+  @Id
+  public UUID id;
+  public String description;
+  public Date endMonthYear;
+  public String name;
+  public String occupation;
+  public String position;
+  public Date startMonthYear;
 }

@@ -14,41 +14,41 @@ import java.util.UUID;
 @Data
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  public Long id;
 
-    @Email
-    @Column(nullable = false)
-    public String email;
+  @Email
+  @Column(nullable = false)
+  public String email;
 
-    @Column(nullable = false)
-    private boolean emailVerified = false;
+  @Column(nullable = false)
+  private boolean emailVerified = false;
 
-    @JsonIgnore
-    public String password;
+  @JsonIgnore
+  public String password;
 
-    @JsonIgnore
-    public String confirmPassword;
+  @JsonIgnore
+  public String confirmPassword;
 
-    @Column(nullable = false)
-    public String username;
+  @Column(nullable = false)
+  public String username;
 
-    public String firstName;
+  public String firstName;
 
-    public String lastName;
+  public String lastName;
 
-    public String profilePicture;
+  public String profilePicture;
 
-    public String projects;
+  public String projects;
 
-    public String headline;
+  public String headline;
 
-    public String vanityName;
+  public String vanityName;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private AuthProvider provider;
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private AuthProvider provider;
 
-    private String providerId;
+  private String providerId;
 }

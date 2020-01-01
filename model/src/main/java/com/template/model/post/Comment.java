@@ -15,19 +15,19 @@ import java.util.Date;
 @Data
 public class Comment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String commentBody;
+  private String commentBody;
 
-    @ManyToOne
-    @JoinColumn(name = "comment_sender_id")
-    private User commentSender;
+  @ManyToOne
+  @JoinColumn(name = "comment_sender_id")
+  private User commentSender;
 
-    private Date commentDate;
-    @ManyToOne
-    @JoinColumn(name = "comment_post_id")
-    private Post commentOfPost;
+  private Date commentDate;
+  @ManyToOne
+  @JoinColumn(name = "comment_post_id")
+  private Post commentOfPost;
 
 }

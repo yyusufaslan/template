@@ -50,9 +50,9 @@
         <xs:attribute name="default-servlet-container" type="xs:string" default="default"/>
         <xs:attribute name="instance-id" type="xs:string" use="optional"/>
         <xs:attribute name="statistics-enabled" type="xs:boolean" default="false">
-          <xs:annotation>
-            <xs:documentation>Whether statistics are to be gathered for undertow subsystem.</xs:documentation>
-          </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Whether statistics are to be gathered for undertow subsystem.</xs:documentation>
+            </xs:annotation>
         </xs:attribute>
     </xs:complexType>
     <xs:complexType name="serverType">
@@ -185,7 +185,7 @@
             <xs:element name="jsp-config" type="jsp-configurationType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="session-cookie" type="session-cookieType" maxOccurs="1" minOccurs="0"/>
             <xs:element name="persistent-sessions" type="persistent-sessionsType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="websockets" type="websocketsType" maxOccurs="1" minOccurs="0" />
+            <xs:element name="websockets" type="websocketsType" maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="name" use="required" type="xs:string"/>
         <xs:attribute name="allow-non-standard-wrappers" use="optional" type="xs:boolean" default="false"/>
@@ -290,7 +290,7 @@
         <xs:attribute name="pattern" use="optional" type="xs:string" default="common"/>
         <xs:attribute name="worker" use="optional" type="xs:string" default="default"/>
         <xs:attribute name="directory" use="optional" type="xs:string" default="${jboss.server.log.dir}"/>
-        <xs:attribute name="relative-to" use="optional" type="xs:string" />
+        <xs:attribute name="relative-to" use="optional" type="xs:string"/>
         <xs:attribute name="prefix" use="optional" type="xs:string" default="access_log."/>
         <xs:attribute name="suffix" use="optional" type="xs:string" default="log"/>
         <xs:attribute name="rotate" use="optional" type="xs:string" default="true"/>
@@ -306,7 +306,6 @@
         <xs:attribute name="name" use="required" type="xs:string"/>
         <xs:attribute name="value" use="required" type="xs:string"/>
     </xs:complexType>
-
 
 
     <xs:complexType name="customFilterType">
@@ -363,7 +362,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="priority" use="optional" type="xs:string" />
+        <xs:attribute name="priority" use="optional" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="singleSignOnType">
@@ -455,12 +454,12 @@
         <xs:attribute name="advertise-frequency" type="xs:int" use="optional"/>
         <xs:attribute name="health-check-interval" type="xs:int" use="optional"/>
         <xs:attribute name="broken-node-timeout" type="xs:int" use="optional"/>
-        <xs:attribute name="worker" type="xs:string" use="optional" />
+        <xs:attribute name="worker" type="xs:string" use="optional"/>
         <xs:attribute name="max-request-time" type="xs:int" use="optional"/>
         <xs:attribute name="management-access-predicate" type="xs:string" use="optional"/>
-        <xs:attribute name="connections-per-thread" type="xs:int" use="optional" />
-        <xs:attribute name="cached-connections-per-thread" type="xs:int" use="optional" />
-        <xs:attribute name="connection-idle-timeout" type="xs:int" use="optional" />
-        <xs:attribute name="request-queue-size" type="xs:int" use="optional" />
+        <xs:attribute name="connections-per-thread" type="xs:int" use="optional"/>
+        <xs:attribute name="cached-connections-per-thread" type="xs:int" use="optional"/>
+        <xs:attribute name="connection-idle-timeout" type="xs:int" use="optional"/>
+        <xs:attribute name="request-queue-size" type="xs:int" use="optional"/>
     </xs:complexType>
 </xs:schema>

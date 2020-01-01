@@ -92,7 +92,8 @@
         </xs:attribute>
         <xs:attribute name="connectable" type="xs:boolean" default="false">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Enable CMR (Commit Markable Resource) functionality on this datasource ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Enable CMR (Commit Markable Resource) functionality on this datasource ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attributeGroup ref="common-datasourceAttributes"/>
@@ -127,7 +128,8 @@
             </xs:element>
             <xs:element name="credential-reference" type="credentialReferenceType" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation><![CDATA[ Access to credentials defined through CredentialStorage. Alternative to username / password. ]]></xs:documentation>
+                    <xs:documentation>
+                        <![CDATA[ Access to credentials defined through CredentialStorage. Alternative to username / password. ]]></xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
@@ -138,32 +140,38 @@
         </xs:attribute>
         <xs:attribute name="url" type="xs:token">
             <xs:annotation>
-                <xs:documentation><![CDATA[ JDBC driver connection URL (e.g. "jdbc:h2:tcp://localhost:1234") ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ JDBC driver connection URL (e.g. "jdbc:h2:tcp://localhost:1234") ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="transaction-isolation" type="transactionIsolationType">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Set the java.sql.Connection transaction isolation level to use ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Set the java.sql.Connection transaction isolation level to use ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="new-connection-sql" type="xs:token">
             <xs:annotation>
-                <xs:documentation><![CDATA[ SQL statement to be executed on a connection after creation ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ SQL statement to be executed on a connection after creation ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="username" type="xs:token">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Username to use for basic authentication with the database ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Username to use for basic authentication with the database ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="password" type="xs:token">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Password to use for basic authentication with the database ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Password to use for basic authentication with the database ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="authentication-context" type="xs:token">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Reference to a authentication context in Elytron. Alternative to username / password. ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Reference to a authentication context in Elytron. Alternative to username / password. ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -186,11 +194,13 @@
 
     <xs:complexType name="credentialReferenceType">
         <xs:annotation>
-            <xs:documentation><![CDATA[ Group of attributes used when referencing credential through credential store ]]></xs:documentation>
+            <xs:documentation>
+                <![CDATA[ Group of attributes used when referencing credential through credential store ]]></xs:documentation>
         </xs:annotation>
         <xs:attribute name="store" type="xs:string">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Credential store name used to fetch credential with given 'alias' from (store name defined some place else) ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Credential store name used to fetch credential with given 'alias' from (store name defined some place else) ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="alias" type="xs:string">
@@ -200,7 +210,8 @@
         </xs:attribute>
         <xs:attribute name="type" type="xs:string">
             <xs:annotation>
-                <xs:documentation><![CDATA[  Type of credential to be fetched from credential store (usually fully qualified class name) ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[  Type of credential to be fetched from credential store (usually fully qualified class name) ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
@@ -289,7 +300,8 @@
     <xs:complexType name="driverType">
         <xs:attribute name="name" type="xs:token" use="required">
             <xs:annotation>
-                <xs:documentation><![CDATA[ Symbolic name of this JDBC driver (used to reference this driver) ]]></xs:documentation>
+                <xs:documentation>
+                    <![CDATA[ Symbolic name of this JDBC driver (used to reference this driver) ]]></xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="module" type="xs:token" use="required">

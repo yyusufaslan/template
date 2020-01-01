@@ -23,11 +23,11 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="urn:jboss:domain:xts:1.0"
-            xmlns="urn:jboss:domain:xts:1.0"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="1.0">
+           targetNamespace="urn:jboss:domain:xts:1.0"
+           xmlns="urn:jboss:domain:xts:1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0">
 
     <!-- The xts subsystem root element -->
     <xs:element name="subsystem" type="subsystem"/>
@@ -35,7 +35,7 @@
     <xs:complexType name="subsystem">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 The configuration of the XTS subsystem.
 
                 This is just the minimum to get XTS bootstrapped as an AS7 extension.
@@ -50,7 +50,7 @@
     <xs:complexType name="xts-environment">
         <xs:annotation>
             <xs:documentation>
-            <![CDATA[
+                <![CDATA[
                 url configures XTS clients to use remote transaction coordination services.
                 if it is left unset then clients employ the local coordinator services.
                 the value should identify an OASIS WSTX 1.1 Activation Coordinator service.
@@ -62,7 +62,7 @@
             ]]>
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="url" type="xs:string" use="optional" />
+        <xs:attribute name="url" type="xs:string" use="optional"/>
     </xs:complexType>
 
 </xs:schema>
